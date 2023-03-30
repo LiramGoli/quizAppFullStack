@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "type": "Text",
+    "title": "What number is the car hiding?",
+    "image": 1,
+    "difficulty": 2,
+    "hint": "Think of this from the driver point of view",
+    "explanation": "The answer is 87. Flip the image to see a parking lot with the numbers: 86,__,88,89,90,91",
+    "answers": [
+      { "answer": "87" },
+      { "answer": "eighty seven" },
+      { "answer": "eighty-seven" }
+    ],
+    "description": "In this riddle, you need to figure out what number is missing from a parking lot sequence shown in an image of a car parked in a lot."
+  },
+  {
+    "id": 2,
+    "type": "Text",
+    "title": "My name is Railey. I changed my name to Corby. Then I changed it to John. And then I changed it to Colin and then I was called Arthur. What is my name?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "try thinking what is the latest name...",
+    "explanation": "His name is still Railey as he starts with this statement, the rest of the names are in the past.",
+    "answers": [{ "answer": "Railey" }],
+    "description": "In this riddle, you need to figure out what is the name of the riddler."
+  },
+  {
+    "id": 3,
+    "type": "Text",
+    "title": "What is the next letter:\n S,O,E,N,S,?",
+    "image": 2,
+    "difficulty": 3,
+    "hint": "try associating the first letter to the first something\nsecond letter to the second something and so on...",
+    "explanation": "first letter of sunday(first day of the week)is-S\nsecond letter of mOnday is-O(second day of the week)and so on...\nso the answer isthe sixth letter of fridaY -Y ",
+    "answers": [{ "answer": "y" }],
+    "description": "In this riddle, you need to identify a pattern"
+  },
+  {
+    "id": 4,
+    "type": "Text",
+    "title": "How many triangles in the picture?",
+    "image": 3,
+    "difficulty": 1,
+    "hint": "?",
+    "explanation": "?",
+    "answers": [{ "answer": 24 },{ "answer": "twenty four" },{ "answer": "twenty-four" }],
+    "description": "In this riddle, you need to count"
+  },
+  {
+    "id": 5,
+    "type": "Text",
+    "title": "I am an odd number.\nTake away a letter and I become even.\nWhat number am I?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "What number will become even after removing a letter",
+    "explanation": "Removing the S from seven will get us the word even",
+    "answers": [{ "answer": "seven" },{ "answer": 7 }],
+    "description": "In this riddle, you need to figure out what is the number"
+  }
+]
