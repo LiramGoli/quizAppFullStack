@@ -17,6 +17,11 @@ import AnswerButton from "../utils/AnsweButton";
 import ImageDict from "../utils/ImageDict";
 import { storeData, clearData } from "../localStorage/localStorage";
 import UserContext from "../context/UserContext";
+import {
+  createUpdateRiddle,
+  getAllRiddles,
+  updateRiddle,
+} from "../API/CollectDataAPI";
 
 export default function Riddle({ route }) {
   const { riddle } = route.params;
@@ -43,7 +48,6 @@ export default function Riddle({ route }) {
   }
 
   const saveAnswer = async (Correct) => {
-    console.log("here");
     let newAnswer = [];
     let userAnswer = {
       id: riddle.id,
@@ -52,7 +56,6 @@ export default function Riddle({ route }) {
       usedAnswer: false,
     };
     if (Correct) {
-      console.log("im here");
       answer = {
         ...userAnswer,
         answer: textAnswer,
@@ -77,7 +80,9 @@ export default function Riddle({ route }) {
     setTextAnswer(value);
   };
 
-  const checkDidQuestion = () => {
+  const checkDidQuestion = async () => {
+    // clearData()
+    getAllRiddles();
     let didQuestion = false;
     if (!(userData == null)) {
       userData.forEach((answer, index) => {
@@ -98,6 +103,7 @@ export default function Riddle({ route }) {
       });
     }
     if (userData == null || didQuestion === false) {
+      await createUpdateRiddle(riddle.id, riddle.difficulty);
       saveAnswer(false);
     }
   };
@@ -109,9 +115,8 @@ export default function Riddle({ route }) {
         textAnswer.toString().toLowerCase().trim()
       ) {
         Alert.alert("Correct", "yes! you have the right answer");
+
         setEditableButtons(false);
-        setHintAlertUsed(true);
-        setAnswerAlertUsed(true);
         saveAnswer(true);
         return;
       }

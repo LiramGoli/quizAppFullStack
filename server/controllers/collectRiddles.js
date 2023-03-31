@@ -2,7 +2,6 @@ const { ok } = require("assert");
 const Riddles = require("../models/Riddles");
 const { StatusCodes } = require("http-status-codes");
 
-
 const getAllRiddles = async (req, res) => {
   try {
     const riddles = await Riddles.find().sort("id");
@@ -13,11 +12,12 @@ const getAllRiddles = async (req, res) => {
 };
 
 const createRiddle = async (req, res) => {
-  const { id } = req.params;
+  console.log("entered here");
+  const { id, difficulty } = req.params;
   try {
     const riddle = await Riddles.findOneAndUpdate(
       { id: id },
-      { $inc: { totalSeen: 1 } },
+      { $inc: { totalSeen: 1 }, difficulty: difficulty },
       { new: true, upsert: true, setDefaultsOnInsert: true }
     );
     res.send(riddle);
@@ -27,6 +27,7 @@ const createRiddle = async (req, res) => {
 };
 
 const updateRiddle = async (req, res) => {
+  console.log("entered here");
   const { id } = req.params;
   const { solved, hints, answer } = req.body;
   try {
