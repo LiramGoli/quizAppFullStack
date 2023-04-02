@@ -19,7 +19,6 @@ import { storeData, clearData } from "../localStorage/localStorage";
 import UserContext from "../context/UserContext";
 import {
   createUpdateRiddle,
-  getAllRiddles,
   updateRiddle,
 } from "../API/CollectDataAPI";
 
@@ -82,7 +81,6 @@ export default function Riddle({ route }) {
 
   const checkDidQuestion = async () => {
     // clearData()
-    getAllRiddles();
     let didQuestion = false;
     if (!(userData == null)) {
       userData.forEach((answer, index) => {
@@ -108,14 +106,14 @@ export default function Riddle({ route }) {
     }
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     for (let answer of riddle.answers) {
       if (
         answer.answer.toString().toLowerCase() ===
         textAnswer.toString().toLowerCase().trim()
       ) {
         Alert.alert("Correct", "yes! you have the right answer");
-
+        await updateRiddle(riddle.id,solved=true)
         setEditableButtons(false);
         saveAnswer(true);
         return;
@@ -161,6 +159,8 @@ export default function Riddle({ route }) {
           hintAlertUsed={hintAlertUsed}
           useHint={riddle.hint}
           setHintAlertUsed={setHintAlertUsed}
+          updateDBFunction={updateRiddle}
+          riddleID={riddle.id}
           editable={editablebuttons}
         />
 
@@ -168,6 +168,8 @@ export default function Riddle({ route }) {
           hintAlertUsed={hintAlertUsed}
           answerAlertUsed={answerAlertUsed}
           setAnswerAlertUsed={setAnswerAlertUsed}
+          updateDBFunction={updateRiddle}
+          riddleID={riddle.id}
           useAnswer={riddle.explanation}
           styles={{ left: 90 }}
         />

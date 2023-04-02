@@ -3,13 +3,14 @@ require("express-async-errors");
 const connectDB = require("./db/connect");
 const riddleRouter = require("./routes/collectRiddles");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
-
 //middlewares
+app.use(cors());
 app.use(express.json());
 //routes
-app.use("/api/v1/riddle-collect",riddleRouter);
+app.use("/api/v1/riddle-collect", riddleRouter);
 
 const port = process.env.PORT || 5000;
 

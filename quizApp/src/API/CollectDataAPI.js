@@ -1,11 +1,10 @@
 const axios = require("axios");
 
-const Api_Uri = "https://localhost:5000/api/v1/riddle-collect";
+const Api_Uri = "http://192.168.1.194:5000/api/v1/riddle-collect";
 
-const getAllRiddles = async () => {
-  console.log("$%^$%^$^%$^%$^%$^%^$%");
+const getAllRiddles = () => {
   try {
-    fetch("http://localhost:5000/api/v1/riddle-collect")
+    fetch(Api_Uri)
       .then((res) => res.json())
       .then((json) => console.log(json));
   } catch (error) {
@@ -36,16 +35,22 @@ const updateRiddle = async (
   answer = false
 ) => {
   try {
-    axios
-      .patch(Api_Uri + `/${id}`, {
+    const response = await fetch(Api_Uri + `/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         solved,
         hints,
         answer,
-      })
-      .then((response) => console.log(response));
+      }),
+    });
+    console.log(await response.json());
   } catch (error) {
     console.error(error);
   }
 };
+
 
 module.exports = { getAllRiddles, createUpdateRiddle, updateRiddle };

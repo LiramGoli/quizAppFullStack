@@ -7,13 +7,18 @@ export default function HintButton({
   setHintAlertUsed,
   useHint,
   styles=null,
-  editable
+  editable,
+  updateDBFunction,
+  riddleID,
 }) {
   return (
     <TouchableOpacity
       style={{ ...globalStyles.button, ...styles }}
       onPress={() => {
         if (!hintAlertUsed) {
+          updateDBFunction(id=riddleID,solved = false,
+            hints = true,
+            answer = false)
           // show ads
           setHintAlertUsed(true);
         }

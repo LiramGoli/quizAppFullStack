@@ -7,6 +7,8 @@ export default function HintButton({
   answerAlertUsed,
   setAnswerAlertUsed,
   useAnswer,
+  updateDBFunction,
+  riddleID,
   styles = null,
 }) {
   return (
@@ -22,6 +24,9 @@ export default function HintButton({
         } else {
           if (!answerAlertUsed) {
             // show ads
+            updateDBFunction(id=riddleID,solved = false,
+              hints = false,
+              answer = true)
             setAnswerAlertUsed(true);
           }
           Alert.alert("Answer", useAnswer);
