@@ -5,14 +5,13 @@
     "title": "What number is the car hiding?",
     "image": 1,
     "difficulty": 2,
-    "hint": "Think of this from the driver point of view",
+    "hint": "Think of this from the driver's point of view",
     "explanation": "The answer is 87. Flip the image to see a parking lot with the numbers: 86,__,88,89,90,91",
     "answers": [
       { "answer": "87" },
       { "answer": "eighty seven" },
       { "answer": "eighty-seven" }
-    ],
-    "description": "In this riddle, you need to figure out what number is missing from a parking lot sequence shown in an image of a car parked in a lot."
+    ]
   },
   {
     "id": 2,
@@ -20,10 +19,9 @@
     "title": "My name is Railey. I changed my name to Corby. Then I changed it to John. And then I changed it to Colin and then I was called Arthur. What is my name?",
     "image": 0,
     "difficulty": 1,
-    "hint": "try thinking what is the latest name...",
+    "hint": " try to think what is the latest name...",
     "explanation": "His name is still Railey as he starts with this statement, the rest of the names are in the past.",
-    "answers": [{ "answer": "Railey" }],
-    "description": "In this riddle, you need to figure out what is the name of the riddler."
+    "answers": [{ "answer": "Railey" }]
   },
   {
     "id": 3,
@@ -32,9 +30,8 @@
     "image": 2,
     "difficulty": 3,
     "hint": "try associating the first letter to the first something\nsecond letter to the second something and so on...",
-    "explanation": "first letter of sunday(first day of the week)is-S\nsecond letter of mOnday is-O(second day of the week)and so on...\nso the answer isthe sixth letter of fridaY -Y ",
-    "answers": [{ "answer": "y" }],
-    "description": "In this riddle, you need to identify a pattern"
+    "explanation": "The Pattern is the days of the week.\nThe first letter of Sunday is S. \nthe second letter of Monday is O, and so on...\nthe answer is the sixth letter of Friday -Y  ",
+    "answers": [{ "answer": "y" }]
   },
   {
     "id": 4,
@@ -42,10 +39,9 @@
     "title": "How many triangles in the picture?",
     "image": 3,
     "difficulty": 1,
-    "hint": "?",
+    "hint": "count all the triangles without forgetting to count the big one and other combinations of triangles that create other triangles. ",
     "explanation": "?",
-    "answers": [{ "answer": 24 },{ "answer": "twenty four" },{ "answer": "twenty-four" }],
-    "description": "In this riddle, you need to count"
+    "answers": [{ "answer": 24 },{ "answer": "twenty four" },{ "answer": "twenty-four" }]
   },
   {
     "id": 5,
@@ -53,9 +49,99 @@
     "title": "I am an odd number.\nTake away a letter and I become even.\nWhat number am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "What number will become even after removing a letter",
-    "explanation": "Removing the S from seven will get us the word even",
-    "answers": [{ "answer": "seven" },{ "answer": 7 }],
-    "description": "In this riddle, you need to figure out what is the number"
+    "hint": "Try to think about what number can become even after removing one letter",
+    "explanation": "By removing the letter -S from the noumber seven we will get the word even",
+    "answers": [{ "answer": "seven" },{ "answer": 7 }]
+  },
+  {
+    "id": 6,
+    "type": "Text",
+    "title": "I can fill up an entire room and still not take up any space. Who am I?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "Think about something that can fill the room in a moment and can get to every corner.",
+    "explanation": "Light, unlike anything else, does not take any space and can fill a room.",
+    "answers": [{ "answer": "light" }]
+  },
+  {
+    "id": 7,
+    "type": "Text",
+    "title": "What can be seen once in a minute\ntwice in a moment \nand never in a thousand years",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "m" },{ "answer": "the letter m" },{ "answer": "letter m" }]
+  },
+  {
+    "id": 8,
+    "type": "Text",
+    "title": "Which word is written incorrectly in a dictionary?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "incorrectly" }]
+  },
+  {
+    "id": 9,
+    "type": "Text",
+    "title": "fill in the blank:\ncarol is Amy's only sister.\nAmy is the _____ of Karol's sister.",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "name" }]
+  },
+  {
+    "id": 10,
+    "type": "Text",
+    "title": "What gets wet when drying?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "towel" },{ "answer": "paper towel" }]
+  },
+  {
+    "id": 11,
+    "type": "Text",
+    "title": "A mother and the father have three daughters\neach daughter has one brother\nhow many children do the mother and the father have in total?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": 4 },{ "answer": "four" }]
+  },
+  {
+    "id": 12,
+    "type": "Text",
+    "title": "What part of London is in France?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "n" },{ "answer": "the letter n" },{ "answer": "letter n" }]
+  },
+  {
+    "id": 13,
+    "type": "Text",
+    "title": "I am a two digit even number. I am a square of a number, and also a cube of another number. Who am I?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": 64 },{ "answer": "sixty four" },{ "answer": "sixty-four" }]
+  },
+  {
+    "id": 14,
+    "type": "Text",
+    "title": "I have one letter but my name is spelled with eight. What am I?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "envelope" },{ "answer": "an envelope" }]
   }
+
 ]
