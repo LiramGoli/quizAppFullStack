@@ -17,10 +17,8 @@ import AnswerButton from "../utils/AnsweButton";
 import ImageDict from "../utils/ImageDict";
 import { storeData, clearData } from "../localStorage/localStorage";
 import UserContext from "../context/UserContext";
-import {
-  createUpdateRiddle,
-  updateRiddle,
-} from "../API/CollectDataAPI";
+import { createUpdateRiddle, updateRiddle } from "../API/CollectDataAPI";
+import BottomBanner from "../utils/Ads/bottomBanners";
 
 export default function Riddle({ route }) {
   const { riddle } = route.params;
@@ -113,7 +111,7 @@ export default function Riddle({ route }) {
         textAnswer.toString().toLowerCase().trim()
       ) {
         Alert.alert("Correct", "yes! you have the right answer");
-        await updateRiddle(riddle.id,solved=true)
+        await updateRiddle(riddle.id, (solved = true));
         setEditableButtons(false);
         saveAnswer(true);
         return;
@@ -127,6 +125,7 @@ export default function Riddle({ route }) {
   };
 
   return (
+    <>
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -178,8 +177,11 @@ export default function Riddle({ route }) {
           onPressFunction={checkAnswer}
           editable={editablebuttons}
         />
+        
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
+    <BottomBanner/>
+    </>
   );
 }
 

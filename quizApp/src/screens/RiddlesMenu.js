@@ -4,6 +4,7 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import {Entypo } from "@expo/vector-icons";
 import UserContext from "../context/UserContext";
+import BottomBanner from "../utils/Ads/bottomBanners";
 
 export default function RiddlesMenu({ route, navigation }) {
   const { difficulty } = route.params;
@@ -54,6 +55,7 @@ export default function RiddlesMenu({ route, navigation }) {
   }
 
   return (
+    <>
     <FlatList
       data={rows}
       keyExtractor={(item, index) => index.toString()}
@@ -63,6 +65,8 @@ export default function RiddlesMenu({ route, navigation }) {
         </View>
       )}
     />
+    <BottomBanner/>
+    </>
   );
 }
 

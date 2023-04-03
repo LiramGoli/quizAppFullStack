@@ -1,9 +1,10 @@
 import { StatusBar } from "expo-status-bar";
+import "expo-dev-client";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import RiddleStack from "./src/routes/RiddleStack";
 import { retrieveData } from "./src/localStorage/localStorage";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import UserContext from "./src/context/UserContext";
 
 export default function App() {

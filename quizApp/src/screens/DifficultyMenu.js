@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import BottomBanner from "../utils/Ads/bottomBanners";
 
 
 const DifficultyMenu = ({ navigation}) => {
@@ -22,6 +23,7 @@ const DifficultyMenu = ({ navigation}) => {
   };
 
   return (
+    <>
     <View style={styles.container}>
       <TouchableOpacity
         key="Easy"
@@ -51,6 +53,8 @@ const DifficultyMenu = ({ navigation}) => {
         <Text style={styles.buttonText}>Hard</Text>
       </TouchableOpacity>
     </View>
+    <BottomBanner/>
+    </>
   );
 };
 
