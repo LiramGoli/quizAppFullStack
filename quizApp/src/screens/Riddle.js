@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import {
-  StyleSheet,
   Text,
   Image,
   TouchableOpacity,
@@ -10,10 +9,9 @@ import {
   Alert,
 } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import EnlargePicModals from "../utils/EnlargedPicModal";
-import SubmitButton from "../utils/SubmitButton";
-import HintButton from "../utils/HintButton";
-import AnswerButton from "../utils/AnsweButton";
+import EnlargePicModals from "../utils/Modals/EnlargedPicModal";
+import SubmitButton from "../utils/Buttons/SubmitButton";
+import AnsHintButtons from "../utils/Buttons/AnsAndHint";
 import ImageDict from "../utils/ImageDict";
 import { storeData, clearData } from "../localStorage/localStorage";
 import UserContext from "../context/UserContext";
@@ -21,10 +19,12 @@ import { createUpdateRiddle, updateRiddle } from "../API/CollectDataAPI";
 import BottomBanner from "../utils/Ads/bottomBanners";
 import interstitial from "../utils/Ads/InterstitialAd";
 import { AdEventType } from "react-native-google-mobile-ads";
+import globalStyles from "../utils/GlobalStyles";
 
 export default function Riddle({ route }) {
   const { riddle } = route.params;
   const { userData, setUserData } = useContext(UserContext);
+  
   const [interstitialLoaded, setInterstitialLoaded] = useState(false);
   const [answerByUser, setAnswerByUser] = useState("your answer");
   const [textAnswer, setTextAnswer] = useState("");
@@ -36,14 +36,12 @@ export default function Riddle({ route }) {
 
   useEffect(() => {
     checkDidQuestion();
-    
     const unsubscribe = interstitial.addAdEventListener(
       AdEventType.LOADED,
       () => {
         setInterstitialLoaded(true);
       }
     );
-
     interstitial.load();
     return unsubscribe;
   }, []);
@@ -97,9 +95,6 @@ export default function Riddle({ route }) {
         // user visited the question
         if (answer.id === riddle.id) {
           didQuestion = true;
-          //need to think about it...
-          // setHintAlertUsed(answer.usedHints);
-          // setAnswerAlertUsed(answer.usedAnswer);
           if (answer.solved) {
             setEditableButtons(false);
             setAnswerByUser(answer.answer);
@@ -130,10 +125,8 @@ export default function Riddle({ route }) {
       }
     }
     setWrongCounter((wrongCounter + 1) % 3);
-    console.log(wrongCounter);
     Alert.alert("Wrong", "Try Again");
     if (!wrongCounter) {
-      console.log(wrongCounter);
       interstitial.show();
     }
   };
@@ -143,13 +136,13 @@ export default function Riddle({ route }) {
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={styles.container}
+          style={globalStyles.riddleContainer}
         >
-          <Text style={styles.title}>{riddle.title}</Text>
+          <Text style={globalStyles.riddleTitle}>{riddle.title}</Text>
 
           {image !== "no" && (
             <TouchableOpacity onPress={() => setPicModalVisible(true)}>
-              <Image style={styles.image} source={image} />
+              <Image style={globalStyles.riddleImage} source={image} />
             </TouchableOpacity>
           )}
 
@@ -162,29 +155,22 @@ export default function Riddle({ route }) {
           )}
 
           <TextInput
-            style={styles.TextInput}
+            style={globalStyles.riddleTextInput}
             placeholder={answerByUser}
             onChangeText={textChangeHandler}
             editable={editablebuttons}
           />
 
-          <HintButton
+          <AnsHintButtons
             hintAlertUsed={hintAlertUsed}
             useHint={riddle.hint}
             setHintAlertUsed={setHintAlertUsed}
             updateDBFunction={updateRiddle}
             riddleID={riddle.id}
             editable={editablebuttons}
-          />
-
-          <AnswerButton
-            hintAlertUsed={hintAlertUsed}
             answerAlertUsed={answerAlertUsed}
             setAnswerAlertUsed={setAnswerAlertUsed}
-            updateDBFunction={updateRiddle}
-            riddleID={riddle.id}
             useAnswer={riddle.explanation}
-            styles={{ left: 90 }}
           />
 
           <SubmitButton
@@ -197,32 +183,3 @@ export default function Riddle({ route }) {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 10,
-    paddingHorizontal: 16,
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-  image: {
-    margin: 30,
-    width: 250,
-    height: 150,
-    resizeMode: "stretch",
-  },
-  TextInput: {
-    borderColor: "black",
-    borderWidth: 1,
-    borderRadius: 10,
-    width: 250,
-    textAlign: "center",
-    margin: 30,
-    borderStyle: "dotted",
-  },
-});

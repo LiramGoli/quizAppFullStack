@@ -24,5 +24,31 @@ const globalStyles = StyleSheet.create({
     height: "80%",
     resizeMode: "contain",
   },
+  riddleContainer: {
+    flex: 1,
+    paddingTop: 10,
+    paddingHorizontal: 16,
+    alignItems: "center",
+  },
+  riddleTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  riddleImage: {
+    margin: 30,
+    width: 250,
+    height: 150,
+    resizeMode: "stretch",
+  },
+  riddleTextInput: {
+    borderColor: "black",
+    borderWidth: 1,
+    borderRadius: 10,
+    width: 250,
+    textAlign: "center",
+    margin: 30,
+    borderStyle: "dotted",
+  },
 });
 export default globalStyles;
