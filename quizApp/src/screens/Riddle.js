@@ -19,11 +19,13 @@ import { storeData, clearData } from "../localStorage/localStorage";
 import UserContext from "../context/UserContext";
 import { createUpdateRiddle, updateRiddle } from "../API/CollectDataAPI";
 import BottomBanner from "../utils/Ads/bottomBanners";
+import interstitial from "../utils/Ads/InterstitialAd";
+import { AdEventType } from "react-native-google-mobile-ads";
 
 export default function Riddle({ route }) {
   const { riddle } = route.params;
   const { userData, setUserData } = useContext(UserContext);
-
+  const [interstitialLoaded, setInterstitialLoaded] = useState(false);
   const [answerByUser, setAnswerByUser] = useState("your answer");
   const [textAnswer, setTextAnswer] = useState("");
   const [picModalVisible, setPicModalVisible] = useState(false);
@@ -34,6 +36,16 @@ export default function Riddle({ route }) {
 
   useEffect(() => {
     checkDidQuestion();
+    
+    const unsubscribe = interstitial.addAdEventListener(
+      AdEventType.LOADED,
+      () => {
+        setInterstitialLoaded(true);
+      }
+    );
+
+    interstitial.load();
+    return unsubscribe;
   }, []);
 
   // taking the image fom ImageDict if id!=0
@@ -118,69 +130,70 @@ export default function Riddle({ route }) {
       }
     }
     setWrongCounter((wrongCounter + 1) % 3);
+    console.log(wrongCounter);
     Alert.alert("Wrong", "Try Again");
     if (!wrongCounter) {
-      console.log("ad video here");
+      console.log(wrongCounter);
+      interstitial.show();
     }
   };
 
   return (
     <>
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-      >
-        <Text style={styles.title}>{riddle.title}</Text>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          style={styles.container}
+        >
+          <Text style={styles.title}>{riddle.title}</Text>
 
-        {image !== "no" && (
-          <TouchableOpacity onPress={() => setPicModalVisible(true)}>
-            <Image style={styles.image} source={image} />
-          </TouchableOpacity>
-        )}
+          {image !== "no" && (
+            <TouchableOpacity onPress={() => setPicModalVisible(true)}>
+              <Image style={styles.image} source={image} />
+            </TouchableOpacity>
+          )}
 
-        {image !== "no" && (
-          <EnlargePicModals
-            picModalVisible={picModalVisible}
-            setPicModalVisible={setPicModalVisible}
-            image={image}
+          {image !== "no" && (
+            <EnlargePicModals
+              picModalVisible={picModalVisible}
+              setPicModalVisible={setPicModalVisible}
+              image={image}
+            />
+          )}
+
+          <TextInput
+            style={styles.TextInput}
+            placeholder={answerByUser}
+            onChangeText={textChangeHandler}
+            editable={editablebuttons}
           />
-        )}
 
-        <TextInput
-          style={styles.TextInput}
-          placeholder={answerByUser}
-          onChangeText={textChangeHandler}
-          editable={editablebuttons}
-        />
+          <HintButton
+            hintAlertUsed={hintAlertUsed}
+            useHint={riddle.hint}
+            setHintAlertUsed={setHintAlertUsed}
+            updateDBFunction={updateRiddle}
+            riddleID={riddle.id}
+            editable={editablebuttons}
+          />
 
-        <HintButton
-          hintAlertUsed={hintAlertUsed}
-          useHint={riddle.hint}
-          setHintAlertUsed={setHintAlertUsed}
-          updateDBFunction={updateRiddle}
-          riddleID={riddle.id}
-          editable={editablebuttons}
-        />
+          <AnswerButton
+            hintAlertUsed={hintAlertUsed}
+            answerAlertUsed={answerAlertUsed}
+            setAnswerAlertUsed={setAnswerAlertUsed}
+            updateDBFunction={updateRiddle}
+            riddleID={riddle.id}
+            useAnswer={riddle.explanation}
+            styles={{ left: 90 }}
+          />
 
-        <AnswerButton
-          hintAlertUsed={hintAlertUsed}
-          answerAlertUsed={answerAlertUsed}
-          setAnswerAlertUsed={setAnswerAlertUsed}
-          updateDBFunction={updateRiddle}
-          riddleID={riddle.id}
-          useAnswer={riddle.explanation}
-          styles={{ left: 90 }}
-        />
-
-        <SubmitButton
-          onPressFunction={checkAnswer}
-          editable={editablebuttons}
-        />
-        
-      </KeyboardAvoidingView>
-    </TouchableWithoutFeedback>
-    <BottomBanner/>
+          <SubmitButton
+            onPressFunction={checkAnswer}
+            editable={editablebuttons}
+          />
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
+      <BottomBanner />
     </>
   );
 }

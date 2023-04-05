@@ -1,4 +1,3 @@
-const axios = require("axios");
 
 const Api_Uri = "http://192.168.1.194:5000/api/v1/riddle-collect";
 
