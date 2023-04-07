@@ -8,7 +8,7 @@ import BottomBanner from "../utils/Ads/bottomBanners";
 
 export default function RiddlesMenu({ route, navigation }) {
   const { difficulty } = route.params;
-  const { userData, setUserData } = useContext(UserContext);
+  const { userData } = useContext(UserContext);
 
   const filteredRiddles = riddles.filter(
     (riddle) => riddle.difficulty === difficulty
