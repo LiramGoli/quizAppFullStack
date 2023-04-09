@@ -12,7 +12,6 @@ const getAllRiddles = async (req, res) => {
 };
 
 const createRiddle = async (req, res) => {
-  console.log("entered here");
   const { id, difficulty } = req.params;
   try {
     const riddle = await Riddles.findOneAndUpdate(
@@ -27,7 +26,6 @@ const createRiddle = async (req, res) => {
 };
 
 const updateRiddle = async (req, res) => {
-  console.log("entered here");
   const { id } = req.params;
   const { solved, hints, answer } = req.body;
   try {

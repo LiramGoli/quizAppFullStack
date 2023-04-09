@@ -23,7 +23,6 @@ const clearData = async () => {
   } catch (e) {
     // clear error
   }
-
   console.log("Done.");
 };
 

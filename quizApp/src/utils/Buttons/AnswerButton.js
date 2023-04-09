@@ -7,14 +7,12 @@ export default function HintButton({
   hintAlertUsed,
   updateDBFunction,
   riddleID,
-  answerAlertUsed,
-  setAnswerAlertUsed,
-  useAnswer,
   showRewardAd,
   styles = null,
+  userUsedAnswer,
 }) {
   const [disabled, setDisabled] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -43,7 +41,8 @@ export default function HintButton({
             "You have to use the hint first..\natleast give it a shot"
           );
         } else {
-          if (!answerAlertUsed) {
+          const watched = showRewardAd();
+          if (watched && !userUsedAnswer) {
             showRewardAd();
             updateDBFunction(
               (id = riddleID),
@@ -51,9 +50,7 @@ export default function HintButton({
               (hints = false),
               (answer = true)
             );
-            setAnswerAlertUsed(true);
           }
-          Alert.alert("Answer", useAnswer);
         }
       }}
       disabled={disabled}

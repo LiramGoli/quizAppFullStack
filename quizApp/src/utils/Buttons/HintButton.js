@@ -4,16 +4,14 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { useState, useEffect } from "react";
 
 export default function HintButton({
-  hintAlertUsed,
-  setHintAlertUsed,
-  useHint,
   editable,
   updateDBFunction,
   showRewardAd,
   riddleID,
+  userUsedHint,
 }) {
   const [disabled, setDisabled] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,20 +33,15 @@ export default function HintButton({
     <TouchableOpacity
       style={{ ...globalStyles.button, ...buttonStyle }}
       onPress={() => {
-        if (!hintAlertUsed && !disabled) {
           const watched = showRewardAd();
-          console.log(watched);
-          if (watched) {
+          if (watched && !userUsedHint) {
             updateDBFunction(
               (id = riddleID),
               (solved = false),
               (hints = true),
               (answer = false)
             );
-            setHintAlertUsed(true);
-            Alert.alert("Hint", useHint);
           }
-        } else Alert.alert("Hint", useHint);
       }}
       disabled={!editable || disabled}
     >

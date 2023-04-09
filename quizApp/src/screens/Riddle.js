@@ -18,18 +18,20 @@ import { storeData, clearData } from "../localStorage/localStorage";
 import UserContext from "../context/UserContext";
 import { createUpdateRiddle, updateRiddle } from "../API/CollectDataAPI";
 import BottomBanner from "../utils/Ads/bottomBanners";
-import interstitial from "../utils/Ads/InterstitialAd";
-import hintRewardedInterstitial from "../utils/Ads/RewardAdHints";
-import ansRewardedInterstitial from "../utils/Ads/RewardAnsAd";
+import { interstitial } from "../utils/Ads/InterstitialAd";
+import { hintRewardedInterstitial, loadRewardHintAd } from "../utils/Ads/RewardAdHints";
+import { ansRewardedInterstitial ,loadRewardAnsAd} from "../utils/Ads/RewardAnsAd";
+import LoadingModal from "../utils/Modals/LoadingModal";
 import globalStyles from "../utils/GlobalStyles";
 import {
   AdEventType,
-  RewardedAdEventType,
 } from "react-native-google-mobile-ads";
 
 export default function Riddle({ route }) {
   const { riddle } = route.params;
   const { userData, setUserData } = useContext(UserContext);
+  const {userUsedHint,setUserUsedHint}=useState(false)
+  const {userUsedAnswer,setUserUsedAnswer}=useState(false)
   const [interstitialLoaded, setInterstitialLoaded] = useState(false);
   const [hintRewardInterstitialLoaded, setHintRewardInterstitialLoaded] =
     useState(false);
@@ -42,6 +44,25 @@ export default function Riddle({ route }) {
   const [answerAlertUsed, setAnswerAlertUsed] = useState(false);
   const [wrongCounter, setWrongCounter] = useState(1);
   const [editablebuttons, setEditableButtons] = useState(true);
+  const [loadingModal, setLoadingModal] = useState(false);
+
+  //adHints
+  useEffect(() => {
+    if (hintRewardInterstitialLoaded) {
+      setLoadingModal(false);
+      hintRewardedInterstitial.show();
+      setHintRewardInterstitialLoaded(false);
+    }
+  }, [hintRewardInterstitialLoaded]);
+
+  //adAns
+  useEffect(() => {
+    if(ansRewardInterstitialLoaded){
+      setLoadingModal(false);
+      ansRewardedInterstitial.show();
+      setAnsRewardInterstitialLoaded(false)
+    }
+  }, [ansRewardInterstitialLoaded]);
 
   useEffect(() => {
     const unsubscribe = interstitial.addAdEventListener(
@@ -51,50 +72,10 @@ export default function Riddle({ route }) {
       }
     );
 
-    const hintRewardUnsubscribeLoaded =
-      hintRewardedInterstitial.addAdEventListener(
-        RewardedAdEventType.LOADED,
-        () => {
-          setHintRewardInterstitialLoaded(true);
-        }
-      );
-
-    const hintRewardUnsubscribeEarned =
-      hintRewardedInterstitial.addAdEventListener(
-        RewardedAdEventType.EARNED_REWARD,
-        (reward) => {
-          Alert.alert("Hint", riddle.hint);
-        }
-      );
-
-    const ansRewardUnsubscribeLoaded =
-      ansRewardedInterstitial.addAdEventListener(
-        RewardedAdEventType.LOADED,
-        () => {
-          setAnsRewardInterstitialLoaded(true);
-        }
-      );
-
-    const ansRewardUnsubscribeEarned =
-      ansRewardedInterstitial.addAdEventListener(
-        RewardedAdEventType.EARNED_REWARD,
-        (reward) => {
-          Alert.alert("Answer", riddle.explanation);
-        }
-      );
-
     interstitial.load();
-    hintRewardedInterstitial.load();
-    ansRewardedInterstitial.load();
     checkDidQuestion();
 
-    return () => {
-      unsubscribe;
-      hintRewardUnsubscribeLoaded();
-      ansRewardUnsubscribeLoaded();
-      hintRewardUnsubscribeEarned();
-      ansRewardUnsubscribeEarned();
-    };
+    return unsubscribe;
   }, []);
 
   // taking the image fom ImageDict if id!=0
@@ -118,8 +99,8 @@ export default function Riddle({ route }) {
         ...userAnswer,
         answer: textAnswer,
         solved: true,
-        usedHints: hintAlertUsed,
-        usedAnswer: answerAlertUsed,
+        usedHints: userUsedHint? userUsedHint: hintAlertUsed,
+        usedAnswer: userUsedAnswer? userUsedAnswer: answerAlertUsed,
       };
       newAnswer = userData.filter((obj) => obj.id !== answer.id);
       newAnswer = userData != null ? [...newAnswer, answer] : [answer];
@@ -146,11 +127,11 @@ export default function Riddle({ route }) {
         // user visited the question
         if (answer.id === riddle.id) {
           didQuestion = true;
+          setUserUsedHint(answer.usedHint)
+          setUserUsedAnswer(answer.usedAnswer)
           if (answer.solved) {
             setEditableButtons(false);
             setAnswerByUser(answer.answer);
-            setHintAlertUsed(true);
-            setAnswerAlertUsed(true);
           }
           return false; // this will exit the forEach loop entirely
         }
@@ -183,28 +164,24 @@ export default function Riddle({ route }) {
   };
 
   const onPressHint = () => {
-    if (!hintRewardInterstitialLoaded) {
-      Alert.alert(
-        "Warning!",
-        "can't see hints at the moment\n try again later"
-      );
-      return false;
-    } else {
-      hintRewardedInterstitial.show();
-      hintRewardedInterstitial.load();
+    if (!hintAlertUsed) {
+      loadRewardHintAd(riddle.hint, setHintRewardInterstitialLoaded,setHintAlertUsed);
+      setLoadingModal(true);
       return true;
+    } else {
+      Alert.alert("Hint", riddle.hint);
+      return false;
     }
   };
 
   const onPressAnswer = () => {
-    if (!ansRewardInterstitialLoaded)
-      Alert.alert(
-        "Warning!",
-        "can't see Answers at the moment\n try again later"
-      );
-    else {
-      ansRewardedInterstitial.show();
-      ansRewardedInterstitial.load();
+    if(!answerAlertUsed){
+      loadRewardAnsAd(riddle.explanation,setAnsRewardInterstitialLoaded,setAnswerAlertUsed);
+      setLoadingModal(true);
+      return true;
+    }else {
+      Alert.alert("Answer", riddle.explanation);
+      return false;
     }
   };
 
@@ -231,6 +208,8 @@ export default function Riddle({ route }) {
             />
           )}
 
+          <LoadingModal visible={loadingModal} />
+
           <TextInput
             style={globalStyles.riddleTextInput}
             placeholder={answerByUser}
@@ -239,24 +218,20 @@ export default function Riddle({ route }) {
           />
 
           <HintButton
-            hintAlertUsed={hintAlertUsed}
-            setHintAlertUsed={setHintAlertUsed}
             updateDBFunction={updateRiddle}
             riddleID={riddle.id}
             editable={editablebuttons}
             showRewardAd={onPressHint}
-            useHint={riddle.hint}
+            userUsedHint={userUsedHint}
           />
 
           <AnswerButton
             hintAlertUsed={hintAlertUsed}
             updateDBFunction={updateRiddle}
             riddleID={riddle.id}
-            answerAlertUsed={answerAlertUsed}
-            setAnswerAlertUsed={setAnswerAlertUsed}
-            useAnswer={riddle.explanation}
             showRewardAd={onPressAnswer}
             styles={{ left: 90 }}
+            userUsedAnswer={userUsedAnswer}
           />
 
           <SubmitButton

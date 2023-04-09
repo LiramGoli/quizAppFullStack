@@ -50,7 +50,7 @@
     "image": 0,
     "difficulty": 1,
     "hint": "Try to think about what number can become even after removing one letter",
-    "explanation": "By removing the letter -S from the noumber seven we will get the word even",
+    "explanation": "By removing the letter -S from the number seven we will get the word even",
     "answers": [{ "answer": "seven" },{ "answer": 7 }]
   },
   {
