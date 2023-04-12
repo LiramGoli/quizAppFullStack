@@ -39,7 +39,6 @@ export const loadRewardHintAd = (hint, setHintRewardInterstitialLoaded,setHintAl
     });
 
   hintRewardedInterstitial.load();
-  console.log(hintRewardedInterstitial);
   
   return () => {
     

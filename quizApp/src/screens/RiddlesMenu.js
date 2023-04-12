@@ -1,8 +1,8 @@
 import riddles from "../utils/riddles.json";
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import {Entypo } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import UserContext from "../context/UserContext";
 import BottomBanner from "../utils/Ads/bottomBanners";
 
@@ -14,21 +14,30 @@ export default function RiddlesMenu({ route, navigation }) {
     (riddle) => riddle.difficulty === difficulty
   );
 
-  const onPressHandler = (riddle) => {
+  let unsolvedRiddles = [];
+  for (let i = 0; i < filteredRiddles.length; i++) {
+    unsolvedRiddles.push(filteredRiddles[i].id);
+  }
+  
+
+  const OpenRiddle = (id) => {
+    const riddle = filteredRiddles.find((obj) => obj.id === id);
     navigation.navigate("Riddle", {
       riddle: riddle,
+      unsolvedRiddles:unsolvedRiddles,
+      OpenRiddle:OpenRiddle
     });
   };
 
   const findSolved = (id) => {
-    if(userData!==null){
+    if (userData !== null) {
       const foundItem = userData.find(
         (item) => item.id === id && item.solved === true
       );
+      unsolvedRiddles = unsolvedRiddles.filter((item) => item.id !== id);
       return !!foundItem;
     }
-    return false
-    
+    return false;
   };
 
   const data = filteredRiddles.map((riddle, index) => ({
@@ -36,7 +45,7 @@ export default function RiddlesMenu({ route, navigation }) {
     button: (
       <TouchableOpacity
         style={styles.button}
-        onPress={() => onPressHandler(riddle)}
+        onPress={() => OpenRiddle(riddle.id)}
       >
         <View style={styles.iconContainer}>
           {findSolved(riddle.id) === false ? (
@@ -56,16 +65,14 @@ export default function RiddlesMenu({ route, navigation }) {
 
   return (
     <>
-    <FlatList
-      data={rows}
-      keyExtractor={(item, index) => index.toString()}
-      renderItem={({ item, index }) => (
-        <View style={styles.content}>
-          {item.map((i) => i.button)}
-        </View>
-      )}
-    />
-    <BottomBanner/>
+      <FlatList
+        data={rows}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item, index }) => (
+          <View style={styles.content}>{item.map((i) => i.button)}</View>
+        )}
+      />
+      <BottomBanner />
     </>
   );
 }

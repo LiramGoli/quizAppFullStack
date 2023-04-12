@@ -1,3 +1,4 @@
+
 import { StatusBar } from "expo-status-bar";
 import "expo-dev-client";
 import { StyleSheet, Text, View } from "react-native";
