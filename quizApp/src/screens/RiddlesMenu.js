@@ -21,6 +21,7 @@ export default function RiddlesMenu({ route, navigation }) {
   
 
   const OpenRiddle = (id) => {
+    console.log(unsolvedRiddles);
     const riddle = filteredRiddles.find((obj) => obj.id === id);
     navigation.navigate("Riddle", {
       riddle: riddle,
@@ -34,7 +35,8 @@ export default function RiddlesMenu({ route, navigation }) {
       const foundItem = userData.find(
         (item) => item.id === id && item.solved === true
       );
-      unsolvedRiddles = unsolvedRiddles.filter((item) => item.id !== id);
+      if(!!foundItem)
+          unsolvedRiddles = unsolvedRiddles.filter((item) => item !== id);
       return !!foundItem;
     }
     return false;

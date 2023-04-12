@@ -18,6 +18,7 @@ import SubmitButton from "../utils/Buttons/SubmitButton";
 import LoadingModal from "../utils/Modals/LoadingModal";
 import EnlargePicModals from "../utils/Modals/EnlargedPicModal";
 import SuccessModal from "../utils/Modals/CorrectAnswerModal";
+import LastQuestionModal from "../utils/Modals/LastQuestionModal";
 
 import ImageDict from "../utils/ImageDict";
 import { storeData, clearData } from "../localStorage/localStorage";
@@ -174,7 +175,6 @@ export default function Riddle({ navigation, route }) {
       ) {
         // Alert.alert("Correct", "yes! you have the right answer");
         setFinishedQuestion(true);
-        console.log(finishedQuestion);
         await updateRiddle(riddle.id, (solved = true));
         setEditableButtons(false);
         saveAnswer(true);
@@ -220,19 +220,25 @@ export default function Riddle({ navigation, route }) {
 
   const goToMenu = () => {
     setFinishedQuestion(false);
-    navigation.goBack();
+    unsolvedRiddles.length === 1 ?navigation.pop(2): navigation.goBack();
   };
+
   const nextQuestion = () => {
-    function findNextNumber(list, givenNumber) {
-      for (let i = 0; i < list.length - 1; i++) {
-        if (list[i] === givenNumber) {
-          return list[i + 1];
+    function findNextNumber(id) {
+      for (let i = 0; i <= unsolvedRiddles.length - 1; i++) {
+        if (unsolvedRiddles[i] === id) {
+          console.log(unsolvedRiddles[i]);
+          if (i === unsolvedRiddles.length - 1) return unsolvedRiddles[0];
+          else return unsolvedRiddles[i + 1];
         }
       }
       return null; // givenNumber not found or is the last number in the list
     }
-    const nextNumber = findNextNumber(unsolvedRiddles, riddle.id);
+    const nextNumber = findNextNumber(riddle.id);
+    const index = unsolvedRiddles.indexOf(riddle.id);
+    if (index > -1) unsolvedRiddles.splice(index, 1);
     if (nextNumber !== null) {
+      //reset all the states
       setUserUsedHint(false);
       setUserUsedAnswer(false);
       setInterstitialLoaded(false);
@@ -247,6 +253,7 @@ export default function Riddle({ navigation, route }) {
       setEditableButtons(true);
       setLoadingModal(false);
       setFinishedQuestion(false);
+
       OpenRiddle(nextNumber);
     }
   };
@@ -274,12 +281,20 @@ export default function Riddle({ navigation, route }) {
           )}
 
           <LoadingModal visible={loadingModal} />
-          <SuccessModal
-            visible={finishedQuestion}
-            onNextQuestion={nextQuestion}
-            onGoToMenu={goToMenu}
-            setFinishedQuestion={setFinishedQuestion}
-          />
+          {unsolvedRiddles.length === 1 ? (
+            <LastQuestionModal
+              visible={finishedQuestion}
+              setFinishedQuestion={setFinishedQuestion}
+              onGoToMenu={goToMenu}
+            />
+          ) : (
+            <SuccessModal
+              visible={finishedQuestion}
+              onNextQuestion={nextQuestion}
+              onGoToMenu={goToMenu}
+              setFinishedQuestion={setFinishedQuestion}
+            />
+          )}
 
           <TextInput
             style={globalStyles.riddleTextInput}
