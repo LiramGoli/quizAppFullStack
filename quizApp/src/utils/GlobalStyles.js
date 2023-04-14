@@ -5,7 +5,7 @@ const globalStyles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: "#0080ff",
+    backgroundColor: 'rgba(15, 50, 100, 0.9)',
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
@@ -31,9 +31,11 @@ const globalStyles = StyleSheet.create({
     alignItems: "center",
   },
   riddleTitle: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     marginBottom: 20,
+    alignItems: "center",
+    textAlign: "center",
   },
   riddleImage: {
     margin: 30,
@@ -49,6 +51,13 @@ const globalStyles = StyleSheet.create({
     textAlign: "center",
     margin: 30,
     borderStyle: "dotted",
+  },
+  background: {
+    flexWrap: "wrap",
+    alignContent: "flex-start",
+    position: "absolute",
+    height: "100%",
+    width: "100%",
   },
 });
 export default globalStyles;

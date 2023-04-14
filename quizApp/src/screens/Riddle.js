@@ -36,6 +36,9 @@ import {
 } from "../utils/Ads/RewardAnsAd";
 import globalStyles from "../utils/GlobalStyles";
 import { AdEventType } from "react-native-google-mobile-ads";
+import LottieView from "lottie-react-native";
+import fullScreenAnimationDict from "../utils/FullScreenAnimationDict";
+import CustomHeader from "../utils/CustomHeader";
 
 export default function Riddle({ navigation, route }) {
   const { riddle, unsolvedRiddles, OpenRiddle } = route.params;
@@ -100,6 +103,12 @@ export default function Riddle({ navigation, route }) {
 
     return () => clearTimeout(timeout);
   }, [loadingModal]);
+
+  const chooseAnimation = () => {
+    let size = Object.keys(fullScreenAnimationDict).length;
+    const num = Math.floor(Math.random() * size) + 1;
+    return fullScreenAnimationDict[num].image;
+  };
 
   // taking the image from ImageDict if id!=0
   let image;
@@ -220,14 +229,13 @@ export default function Riddle({ navigation, route }) {
 
   const goToMenu = () => {
     setFinishedQuestion(false);
-    unsolvedRiddles.length === 1 ?navigation.pop(2): navigation.goBack();
+    unsolvedRiddles.length === 1 ? navigation.pop(2) : navigation.goBack();
   };
 
   const nextQuestion = () => {
     function findNextNumber(id) {
       for (let i = 0; i <= unsolvedRiddles.length - 1; i++) {
         if (unsolvedRiddles[i] === id) {
-          console.log(unsolvedRiddles[i]);
           if (i === unsolvedRiddles.length - 1) return unsolvedRiddles[0];
           else return unsolvedRiddles[i + 1];
         }
@@ -259,6 +267,14 @@ export default function Riddle({ navigation, route }) {
   };
   return (
     <>
+      <LottieView
+        source={require("../../assets/Lottie/background.json")}
+        autoPlay
+        loop
+        style={globalStyles.background}
+        resizeMode="cover"
+      />
+      <CustomHeader />
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -303,7 +319,14 @@ export default function Riddle({ navigation, route }) {
             onChangeText={textChangeHandler}
             editable={editablebuttons}
           />
-
+          {finishedQuestion && (
+            <LottieView
+              source={chooseAnimation()}
+              autoPlay
+              loop={false}
+              style={{ flex: 1 }}
+            />
+          )}
           <HintButton
             updateDBFunction={updateRiddle}
             riddleID={riddle.id}

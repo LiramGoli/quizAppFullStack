@@ -5,10 +5,19 @@ import { FlatList } from "react-native-gesture-handler";
 import { Entypo } from "@expo/vector-icons";
 import UserContext from "../context/UserContext";
 import BottomBanner from "../utils/Ads/bottomBanners";
+import LottieView from "lottie-react-native";
+import globalStyles from "../utils/GlobalStyles";
+import CustomHeader from "../utils/CustomHeader";
 
 export default function RiddlesMenu({ route, navigation }) {
   const { difficulty } = route.params;
   const { userData } = useContext(UserContext);
+
+  const difficultyEnum = {
+    1: "Easy",
+    2: "Medium",
+    3: "Hard",
+  };
 
   const filteredRiddles = riddles.filter(
     (riddle) => riddle.difficulty === difficulty
@@ -18,15 +27,13 @@ export default function RiddlesMenu({ route, navigation }) {
   for (let i = 0; i < filteredRiddles.length; i++) {
     unsolvedRiddles.push(filteredRiddles[i].id);
   }
-  
 
   const OpenRiddle = (id) => {
-    console.log(unsolvedRiddles);
     const riddle = filteredRiddles.find((obj) => obj.id === id);
     navigation.navigate("Riddle", {
       riddle: riddle,
-      unsolvedRiddles:unsolvedRiddles,
-      OpenRiddle:OpenRiddle
+      unsolvedRiddles: unsolvedRiddles,
+      OpenRiddle: OpenRiddle,
     });
   };
 
@@ -35,8 +42,8 @@ export default function RiddlesMenu({ route, navigation }) {
       const foundItem = userData.find(
         (item) => item.id === id && item.solved === true
       );
-      if(!!foundItem)
-          unsolvedRiddles = unsolvedRiddles.filter((item) => item !== id);
+      if (!!foundItem)
+        unsolvedRiddles = unsolvedRiddles.filter((item) => item !== id);
       return !!foundItem;
     }
     return false;
@@ -67,6 +74,14 @@ export default function RiddlesMenu({ route, navigation }) {
 
   return (
     <>
+      <LottieView
+        source={require("../../assets/Lottie/background.json")}
+        autoPlay
+        loop
+        style={globalStyles.background}
+        resizeMode="cover"
+      />
+      <CustomHeader title={difficultyEnum[difficulty]}/>
       <FlatList
         data={rows}
         keyExtractor={(item, index) => index.toString()}
@@ -93,7 +108,7 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 25,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "rgba(50, 90, 120, 0.2)",
     borderColor: "#000",
     borderWidth: 1,
     padding: 10,

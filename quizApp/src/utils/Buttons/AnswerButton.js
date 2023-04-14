@@ -1,7 +1,6 @@
 import globalStyles from "../GlobalStyles";
 import { TouchableOpacity, Alert, Text, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useState, useEffect } from "react";
 
 export default function HintButton({
   hintAlertUsed,
@@ -11,28 +10,10 @@ export default function HintButton({
   styles = null,
   userUsedAnswer,
 }) {
-  const [disabled, setDisabled] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((timeLeft) => timeLeft - 1);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (timeLeft === 0) {
-      setDisabled(false);
-    }
-  }, [timeLeft]);
-
-  const buttonStyle = disabled ? style.disabledButton : style.enabledButton;
 
   return (
     <TouchableOpacity
-      style={{ ...globalStyles.button, ...styles, ...buttonStyle }}
+      style={{ ...globalStyles.button, ...styles}}
       onPress={() => {
         if (!hintAlertUsed) {
           // show ads
@@ -53,19 +34,8 @@ export default function HintButton({
           }
         }
       }}
-      disabled={disabled}
     >
-      {disabled && <Text style={{ color: "white" }}>{`${timeLeft}`}</Text>}
       <MaterialIcons name="support" size={40} color="#ffffff" />
     </TouchableOpacity>
   );
 }
-
-const style = StyleSheet.create({
-  disabledButton: {
-    backgroundColor: "lightgrey",
-  },
-  enabledButton: {
-    backgroundColor: "#2196F3",
-  },
-});

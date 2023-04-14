@@ -6,6 +6,9 @@ import {
   Modal,
   TouchableWithoutFeedback,
 } from "react-native";
+import LottieView from "lottie-react-native";
+import ModalAnimationDict from "../ModalAnimationDict";
+import { log } from "react-native-reanimated";
 
 export default function SuccessModal({
   visible,
@@ -13,19 +16,31 @@ export default function SuccessModal({
   onGoToMenu,
   setFinishedQuestion,
 }) {
-
   const closeModal = () => {
     setFinishedQuestion(false);
   };
-  
+  const chooseAnimation = () => {
+    let size = Object.keys(ModalAnimationDict).length;
+    const num = Math.floor(Math.random() * size) + 1;
+    return ModalAnimationDict[num].image
+  };
 
   return (
-    <Modal animationType="fade" transparent={true} visible={visible} onRequestClose={closeModal}>
-      <TouchableWithoutFeedback
-        onPress={closeModal}
-      >
+    <Modal
+      animationType="fade"
+      transparent={true}
+      visible={visible}
+      onRequestClose={closeModal}
+    >
+      <TouchableWithoutFeedback onPress={closeModal}>
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
+            <LottieView
+              source={chooseAnimation()}
+              autoPlay
+              loop={false}
+              style={{ width: 100, height: 100 }}
+            />
             <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
               <Text style={styles.closeButtonText}>X</Text>
             </TouchableOpacity>

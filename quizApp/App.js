@@ -1,4 +1,3 @@
-
 import { StatusBar } from "expo-status-bar";
 import "expo-dev-client";
 import { StyleSheet, Text, View } from "react-native";
@@ -39,6 +38,7 @@ export default function App() {
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
+      <StatusBar translucent backgroundColor="transparent" />
       <NavigationContainer>
         <RiddleStack />
       </NavigationContainer>

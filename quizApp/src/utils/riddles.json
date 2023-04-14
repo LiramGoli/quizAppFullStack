@@ -38,10 +38,14 @@
     "type": "Text",
     "title": "How many triangles in the picture?",
     "image": 3,
-    "difficulty": 1,
+    "difficulty": 2,
     "hint": "count all the triangles without forgetting to count the big one and other combinations of triangles that create other triangles. ",
     "explanation": "?",
-    "answers": [{ "answer": 24 },{ "answer": "twenty four" },{ "answer": "twenty-four" }]
+    "answers": [
+      { "answer": 24 },
+      { "answer": "twenty four" },
+      { "answer": "twenty-four" }
+    ]
   },
   {
     "id": 5,
@@ -51,7 +55,7 @@
     "difficulty": 1,
     "hint": "Try to think about what number can become even after removing one letter",
     "explanation": "By removing the letter -S from the number seven we will get the word even",
-    "answers": [{ "answer": "seven" },{ "answer": 7 }]
+    "answers": [{ "answer": "seven" }, { "answer": 7 }]
   },
   {
     "id": 6,
@@ -71,7 +75,11 @@
     "difficulty": 1,
     "hint": "",
     "explanation": "",
-    "answers": [{ "answer": "m" },{ "answer": "the letter m" },{ "answer": "letter m" }]
+    "answers": [
+      { "answer": "m" },
+      { "answer": "the letter m" },
+      { "answer": "letter m" }
+    ]
   },
   {
     "id": 8,
@@ -101,7 +109,7 @@
     "difficulty": 1,
     "hint": "",
     "explanation": "",
-    "answers": [{ "answer": "towel" },{ "answer": "paper towel" }]
+    "answers": [{ "answer": "towel" }, { "answer": "paper towel" }]
   },
   {
     "id": 11,
@@ -111,7 +119,7 @@
     "difficulty": 1,
     "hint": "",
     "explanation": "",
-    "answers": [{ "answer": 4 },{ "answer": "four" }]
+    "answers": [{ "answer": 4 }, { "answer": "four" }]
   },
   {
     "id": 12,
@@ -121,7 +129,11 @@
     "difficulty": 1,
     "hint": "",
     "explanation": "",
-    "answers": [{ "answer": "n" },{ "answer": "the letter n" },{ "answer": "letter n" }]
+    "answers": [
+      { "answer": "n" },
+      { "answer": "the letter n" },
+      { "answer": "letter n" }
+    ]
   },
   {
     "id": 13,
@@ -129,9 +141,13 @@
     "title": "I am a two digit even number. I am a square of a number, and also a cube of another number. Who am I?",
     "image": 0,
     "difficulty": 2,
-    "hint": "",
-    "explanation": "",
-    "answers": [{ "answer": 64 },{ "answer": "sixty four" },{ "answer": "sixty-four" }]
+    "hint": "start multiplying numbers and you are soon to find it ",
+    "explanation": "64 is the square of 8 (8^2=64), and the cube of 4 (4^3=64)",
+    "answers": [
+      { "answer": 64 },
+      { "answer": "sixty four" },
+      { "answer": "sixty-four" }
+    ]
   },
   {
     "id": 14,
@@ -141,7 +157,199 @@
     "difficulty": 1,
     "hint": "",
     "explanation": "",
-    "answers": [{ "answer": "envelope" },{ "answer": "an envelope" }]
+    "answers": [{ "answer": "envelope" }, { "answer": "an envelope" }]
+  },
+  {
+    "id": 15,
+    "type": "Text",
+    "title": "Feed Me and it will give me life,\nbut give me a drink and I will die.\nWho am I?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "fire" }, { "answer": "a fire" }]
+  },
+  {
+    "id": 16,
+    "type": "Text",
+    "title": "What two-word phrase is hidden in the picture?",
+    "image": 4,
+    "difficulty": 2,
+    "hint": "look where the arrow is pointing",
+    "explanation": "the arrow point to the top secret\nso the answer is...top secret",
+    "answers": [{ "answer": "top secret" }, { "answer": "top-secret" }]
+  },
+  {
+    "id": 17,
+    "type": "Text",
+    "title": "Complete the missing number:",
+    "image": 5,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "four" }, { "answer": "4" }]
+  },
+  {
+    "id": 18,
+    "type": "Text",
+    "title": "If the 3rd of March,\n8th of November,\nand 9th of September are all the same,\nthan what in October is also the same?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "",
+    "explanation": "",
+    "answers": [
+      { "answer": "7" },
+      { "answer": "the 7th" },
+      { "answer": "7th" },
+      { "answer": "october 7th" },
+      { "answer": "seven" },
+      { "answer": "seventh" },
+      { "answer": "7th of october" },
+      { "answer": "the seventh of october" },
+      { "answer": "the 7th of october" }
+    ]
+  },
+  {
+    "id": 19,
+    "type": "Text",
+    "title": "How many pets does Bella have in total if:\nall except two are fish,\nall except two are horses,\nand all except two are dogs?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [
+      { "answer": "3" },
+      { "answer": "3 pets" },
+      { "answer": "three" },
+      { "answer": "only three pets" },
+      { "answer": "only 3 pets" },
+      { "answer": "just three pets" },
+      { "answer": "just 3 pets" },
+      { "answer": "three pets" },
+      { "answer": "the 7th of october" }
+    ]
+  },
+  {
+    "id": 20,
+    "type": "Text",
+    "title": "forwards I am heavy,\nbut backward I am not.\nWhat am I?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "ton" }]
+  },
+  {
+    "id": 21,
+    "type": "Text",
+    "title": "Complete the missing number:",
+    "image": 6,
+    "difficulty": 2,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "40" }, { "answer": "forty " }]
+  },
+  {
+    "id": 22,
+    "type": "Text",
+    "title": "Where does Friday comes before Thursday?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [
+      { "answer": "in a dictionary" },
+      { "answer": "a dictionary" },
+      { "answer": "dictionary" }
+    ]
+  },
+  {
+    "id": 23,
+    "type": "Text",
+    "title": "I am so fragile that even if anybody says my name I break.\nWho am I?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "silence" }, { "answer": "the silence" }]
+  },
+  {
+    "id": 24,
+    "type": "Text",
+    "title": "6   15   18   20   ?   =   FORTY",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "",
+    "explanation": "Replace each number with the corresponding letters in the alphabet.\n6 = F, 15 = O, 18 = R, 20 = T, 25 = Y",
+    "answers": [
+      { "answer": "25" },
+      { "answer": "twenty five" },
+      { "answer": "twenty-five" }
+    ]
+  },
+  {
+    "id": 25,
+    "type": "Text",
+    "title": "How many times is the letter 'A'\nused while writing the spelling of each number\nfrom 1 to 500?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "",
+    "explanation": "the answer is zero\n",
+    "answers": [{ "answer": "zero" }, { "answer": 0 }]
+  },
+  {
+    "id": 26,
+    "type": "Text",
+    "title": "I have keys but can't open any lock,\nI have space but no room.\nWho am I?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [{ "answer": "keyboard" }, { "answer": "a keyboard" }]
+  },
+  {
+    "id": 27,
+    "type": "Text",
+    "title": "Avner the gardener connected 2 piles of leave with another 2 piles of leaves.\nHow many stacks does he have now?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [
+      { "answer": "1" },
+      { "answer": "one" },
+      { "answer": "one pile" },
+      { "answer": "1 pile" }
+    ]
+  },
+  {
+    "id": 28,
+    "type": "Text",
+    "title": "How many times does the number 1 appear in an analog clock?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "",
+    "explanation": "",
+    "answers": [
+      { "answer": 5 },
+      { "answer": "five" },
+      { "answer": "5 times" },
+      { "answer": "five times" }
+    ]
+  },
+  {
+    "id": 29,
+    "type": "Text",
+    "title": "What are the two missing letters?",
+    "image": 7,
+    "difficulty": 3,
+    "hint": "Try looking at this from a different perspective",
+    "explanation": "The missing letters are B and R\n flip the image and it says brainTease backwords",
+    "answers": [
+      { "answer": "b,r" },
+      { "answer": "r,b" },
+      { "answer": "b and r" },
+      { "answer": "r and b" }
+    ]
   }
-
 ]
