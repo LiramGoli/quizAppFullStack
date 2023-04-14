@@ -330,7 +330,6 @@ export default function Riddle({ navigation, route }) {
           <HintButton
             updateDBFunction={updateRiddle}
             riddleID={riddle.id}
-            editable={editablebuttons}
             showRewardAd={onPressHint}
             userUsedHint={userUsedHint}
           />

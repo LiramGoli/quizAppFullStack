@@ -3,7 +3,6 @@ import { TouchableOpacity, Alert, StyleSheet, Text } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function HintButton({
-  editable,
   updateDBFunction,
   showRewardAd,
   riddleID,
