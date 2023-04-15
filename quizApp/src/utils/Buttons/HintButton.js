@@ -10,7 +10,7 @@ export default function HintButton({
 }) {
   return (
     <TouchableOpacity
-      style={{ ...globalStyles.button }}
+      style={{ ...globalStyles.button}}
       onPress={() => {
         const watched = showRewardAd();
         if (watched && !userUsedHint) {

@@ -10,6 +10,7 @@ import {
   TextInput,
 } from "react-native";
 
+import riddles from "../utils/riddles.json";
 import UserContext from "../context/UserContext";
 import HintButton from "../utils/Buttons/HintButton";
 import AnswerButton from "../utils/Buttons/AnswerButton";
@@ -41,7 +42,7 @@ import fullScreenAnimationDict from "../utils/FullScreenAnimationDict";
 import CustomHeader from "../utils/CustomHeader";
 
 export default function Riddle({ navigation, route }) {
-  const { riddle, unsolvedRiddles, OpenRiddle } = route.params;
+  const { riddle, unsolvedRiddles } = route.params;
   const { userData, setUserData } = useContext(UserContext);
   const [userUsedHint, setUserUsedHint] = useState(false);
   const [userUsedAnswer, setUserUsedAnswer] = useState(false);
@@ -261,8 +262,13 @@ export default function Riddle({ navigation, route }) {
       setEditableButtons(true);
       setLoadingModal(false);
       setFinishedQuestion(false);
-
-      OpenRiddle(nextNumber);
+      const nextRiddle = riddles.filter(
+        (riddle) => riddle.id === nextNumber
+      );
+      navigation.replace("Riddle",{
+        riddle:nextRiddle[0],
+        unsolvedRiddles
+      })
     }
   };
   return (
@@ -279,6 +285,7 @@ export default function Riddle({ navigation, route }) {
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           style={globalStyles.riddleContainer}
+          enabled={false}
         >
           <Text style={globalStyles.riddleTitle}>{riddle.title}</Text>
 
