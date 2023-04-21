@@ -8,6 +8,7 @@ import {
   Keyboard,
   Alert,
   TextInput,
+  Vibration,
 } from "react-native";
 
 import riddles from "../utils/riddles.json";
@@ -148,8 +149,8 @@ export default function Riddle({ navigation, route }) {
     const jsonValue = JSON.stringify(newAnswer);
     try {
       await storeData("@riddleData", jsonValue);
-      setCounter(counter+1)
-      await storeData("@NumSolved",counter.toString())
+      setCounter(counter + 1);
+      await storeData("@NumSolved", counter.toString());
     } catch (error) {}
   };
 
@@ -197,6 +198,7 @@ export default function Riddle({ navigation, route }) {
     }
     setWrongCounter((wrongCounter + 1) % 3);
     Alert.alert("Wrong", "Try Again");
+    Vibration.vibrate();
     if (!wrongCounter) {
       interstitial.show();
     }

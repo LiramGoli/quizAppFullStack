@@ -22,7 +22,10 @@
         "foregroundImage": "./assets/AppLogo.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.liram.quizApp"
+      "package": "com.liram.quizApp",
+      "premissions":[
+        "VIBRATE"
+      ]
     },
     "web": {
       "favicon": "./assets/icon.png"

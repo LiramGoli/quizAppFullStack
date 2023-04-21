@@ -1,13 +1,52 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Animated,
+  Vibration,
+} from "react-native";
 import BottomBanner from "../utils/Ads/bottomBanners";
 import LottieView from "lottie-react-native";
 import globalStyles from "../utils/GlobalStyles";
 import CustomHeaderFront from "../utils/CustomHeaderFront";
 import CounterContext from "../context/CounterContext";
-import { useContext } from "react";
+import { useContext, useRef, useCallback } from "react";
 
 const DifficultyMenu = ({ navigation }) => {
   const { counter } = useContext(CounterContext);
+  const animHard = useRef(new Animated.Value(0));
+  const animMedium = useRef(new Animated.Value(0));
+
+  const shake = useCallback((anim) => {
+    Vibration.vibrate();
+    // makes the sequence loop
+    Animated.loop(
+      // runs the animation array in sequence
+      Animated.sequence([
+        // shift element to the left by 2 units
+        Animated.timing(anim.current, {
+          toValue: -2,
+          duration: 50,
+          useNativeDriver: true,
+        }),
+        // shift element to the right by 2 units
+        Animated.timing(anim.current, {
+          toValue: 2,
+          duration: 50,
+          useNativeDriver: true,
+        }),
+        // bring the element back to its original position
+        Animated.timing(anim.current, {
+          toValue: 0,
+          duration: 50,
+          useNativeDriver: true,
+        }),
+      ]),
+      // loops the above animation config 2 times
+      { iterations: 2 }
+    ).start();
+  }, []);
 
   const Difficulty = {
     Easy: 1,
@@ -40,31 +79,36 @@ const DifficultyMenu = ({ navigation }) => {
           onPress={() => {
             pressHandler("Easy");
           }}
-          
         >
           <Text style={styles.buttonText}>Easy</Text>
         </TouchableOpacity>
+        <Animated.View
+          style={{ transform: [{ translateX: animMedium.current }] }}
+        >
+          <TouchableOpacity
+            key="Medium"
+            style={[styles.button, counter < 3 && styles.disabledButton]}
+            onPress={() => {
+              counter < 3 ? shake(animMedium) : pressHandler("Hard");
+            }}
+          >
+            <Text style={styles.buttonText}>Medium</Text>
+          </TouchableOpacity>
+        </Animated.View>
 
-        <TouchableOpacity
-          key="Medium"
-          style={styles.button}
-          onPress={() => {
-            pressHandler("Medium");
-          }}
-          disabled={counter<3}
+        <Animated.View
+          style={{ transform: [{ translateX: animHard.current }] }}
         >
-          <Text style={styles.buttonText}>Medium</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          key="Hard"
-          style={styles.button}
-          onPress={() => {
-            pressHandler("Hard");
-          }}
-          disabled={counter<5}
-        >
-          <Text style={styles.buttonText}>Hard</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            key="Hard"
+            style={[styles.button, counter < 5 && styles.disabledButton]}
+            onPress={() => {
+              counter < 5 ? shake(animHard) : pressHandler("Hard");
+            }}
+          >
+            <Text style={styles.buttonText}>Hard</Text>
+          </TouchableOpacity>
+        </Animated.View>
       </View>
       <BottomBanner />
     </View>
@@ -83,13 +127,13 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 1,
-    marginBottom:50,
+    marginBottom: 50,
   },
   content: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginTop:200
+    marginTop: 200,
   },
   buttonText: {
     color: "#ffffff",
@@ -103,7 +147,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 12,
     marginVertical: 10,
-    width:120
+    width: 120,
   },
   animation: {
     flexWrap: "wrap",
@@ -111,6 +155,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: "100%",
     width: "100%",
+  },
+  disabledButton: {
+    opacity: 0.5,
   },
 });
 
