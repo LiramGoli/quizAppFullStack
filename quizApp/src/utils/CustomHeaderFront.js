@@ -1,16 +1,14 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 
-const CustomHeader = ({ title }) => {
+const CustomHeaderFront = ({ title }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../../assets/LogoTextNoBG.png")}
+        source={require("../../assets/logoNoBG.png")}
         style={styles.logo}
         resizeMode="contain"
       />
-      <Text style={styles.title}>{title}</Text>
-      <View/>
     </View>
   );
 };
@@ -18,22 +16,22 @@ const CustomHeader = ({ title }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
-    height:100,
+    height: 350,
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom:30,
+    marginBottom: 30,
     paddingHorizontal: 10,
-
+    marginTop:20,
   },
   logo: {
-    marginTop:13,
-    width: '100%',
+    flex: 1,
     height: '100%',
+    width: '100%',
+    marginTop: 10,
+    marginBottom: 10,
+    alignSelf: 'center',
   },
-  title: {
-    fontWeight: "bold",
-    fontSize: 22,
-  },
+
 });
 
-export default CustomHeader;
+export default CustomHeaderFront;

@@ -6,14 +6,17 @@ import RiddleStack from "./src/routes/RiddleStack";
 import { retrieveData } from "./src/localStorage/localStorage";
 import { useEffect, useState } from "react";
 import UserContext from "./src/context/UserContext";
+import CounterContext from "./src/context/CounterContext";
 
 export default function App() {
   const [userData, setUserData] = useState();
+  const [counter, setCounter] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getMyObject().then((data) => {
+    getMyObject().then(({data,numSolved}) => {
       setUserData(data);
+      setCounter(numSolved)
       setLoading(false);
     });
   }, []);
@@ -22,7 +25,9 @@ export default function App() {
     try {
       const jsonValue = await retrieveData("@riddleData");
       const data = jsonValue != null ? JSON.parse(jsonValue) : null;
-      return data;
+      const solvedJson=await retrieveData("@NumSolved");
+      const numSolved=solvedJson != null ? Number(JSON.parse(solvedJson)) : 0;
+      return {data,numSolved};
     } catch (e) {
       console.log(e);
     }
@@ -38,10 +43,12 @@ export default function App() {
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
-      <StatusBar translucent backgroundColor="transparent" />
-      <NavigationContainer>
-        <RiddleStack />
-      </NavigationContainer>
+      <CounterContext.Provider value={{ counter, setCounter }}>
+        <StatusBar translucent backgroundColor="transparent" />
+        <NavigationContainer>
+          <RiddleStack />
+        </NavigationContainer>
+      </CounterContext.Provider>
     </UserContext.Provider>
   );
 }

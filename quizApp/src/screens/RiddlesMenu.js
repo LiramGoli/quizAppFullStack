@@ -33,7 +33,6 @@ export default function RiddlesMenu({ route, navigation }) {
     navigation.navigate("Riddle", {
       riddle: riddle,
       unsolvedRiddles: unsolvedRiddles,
-      OpenRiddle: OpenRiddle,
     });
   };
 
@@ -53,14 +52,16 @@ export default function RiddlesMenu({ route, navigation }) {
     key: index.toString(),
     button: (
       <TouchableOpacity
-        style={styles.button}
+        style={
+          findSolved(riddle.id) === false ? styles.button : {...styles.button,backgroundColor: "rgba(90, 250, 30, 0.3)"}
+        }
         onPress={() => OpenRiddle(riddle.id)}
       >
         <View style={styles.iconContainer}>
           {findSolved(riddle.id) === false ? (
-            <Entypo name="help" size={40} color="black" />
+            <Entypo name="help" size={30} color="black" />
           ) : (
-            <Entypo name="emoji-happy" size={40} color="black" />
+            <Entypo name="check" size={30} color="black" />
           )}
         </View>
       </TouchableOpacity>
@@ -81,7 +82,7 @@ export default function RiddlesMenu({ route, navigation }) {
         style={globalStyles.background}
         resizeMode="cover"
       />
-      <CustomHeader title={difficultyEnum[difficulty]}/>
+      <CustomHeader title={difficultyEnum[difficulty]} />
       <FlatList
         data={rows}
         keyExtractor={(item, index) => index.toString()}
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 25,
+    borderStyle: "dashed",
     backgroundColor: "rgba(50, 90, 120, 0.2)",
     borderColor: "#000",
     borderWidth: 1,

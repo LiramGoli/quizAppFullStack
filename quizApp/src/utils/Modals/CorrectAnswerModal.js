@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import LottieView from "lottie-react-native";
 import ModalAnimationDict from "../ModalAnimationDict";
-import { log } from "react-native-reanimated";
+import { Entypo, FontAwesome5 } from "@expo/vector-icons";
 
 export default function SuccessModal({
   visible,
@@ -22,7 +22,7 @@ export default function SuccessModal({
   const chooseAnimation = () => {
     let size = Object.keys(ModalAnimationDict).length;
     const num = Math.floor(Math.random() * size) + 1;
-    return ModalAnimationDict[num].image
+    return ModalAnimationDict[num].image;
   };
 
   return (
@@ -47,12 +47,21 @@ export default function SuccessModal({
             <Text style={styles.successText}>
               Correct!{"\n"}You have the right answer.
             </Text>
-            <TouchableOpacity style={styles.button} onPress={onNextQuestion}>
-              <Text style={styles.buttonText}>Next Question</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={onGoToMenu}>
-              <Text style={styles.buttonText}>Go to Menu</Text>
-            </TouchableOpacity>
+            <View style={{ flexDirection: "row" }}>
+              <TouchableOpacity
+                style={{ ...styles.button }}
+                onPress={onGoToMenu}
+              >
+                <Entypo name="back" size={25} color="white" />
+                {/* <FontAwesome5 name="backward" size={25} color="white"/> */}
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ ...styles.button, flex: 5 }}
+                onPress={onNextQuestion}
+              >
+                <Text style={styles.buttonText}>Next Question</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -96,13 +105,15 @@ const styles = {
   button: {
     backgroundColor: "#3f9dfc",
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 15,
     marginTop: 20,
-    minWidth: "50%",
+    margin: 3,
+    // minWidth: "50%",
   },
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
     textAlign: "center",
+    fontSize: 22
   },
 };

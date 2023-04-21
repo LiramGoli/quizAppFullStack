@@ -40,10 +40,12 @@ import { AdEventType } from "react-native-google-mobile-ads";
 import LottieView from "lottie-react-native";
 import fullScreenAnimationDict from "../utils/FullScreenAnimationDict";
 import CustomHeader from "../utils/CustomHeader";
+import CounterContext from "../context/CounterContext";
 
 export default function Riddle({ navigation, route }) {
   const { riddle, unsolvedRiddles } = route.params;
   const { userData, setUserData } = useContext(UserContext);
+  const { counter, setCounter } = useContext(CounterContext);
   const [userUsedHint, setUserUsedHint] = useState(false);
   const [userUsedAnswer, setUserUsedAnswer] = useState(false);
   const [interstitialLoaded, setInterstitialLoaded] = useState(false);
@@ -146,6 +148,8 @@ export default function Riddle({ navigation, route }) {
     const jsonValue = JSON.stringify(newAnswer);
     try {
       await storeData("@riddleData", jsonValue);
+      setCounter(counter+1)
+      await storeData("@NumSolved",counter.toString())
     } catch (error) {}
   };
 
@@ -176,6 +180,7 @@ export default function Riddle({ navigation, route }) {
       saveAnswer(false);
     }
   };
+
   //checking if the question is correct if so update db
   const checkAnswer = async () => {
     for (let answer of riddle.answers) {
@@ -183,7 +188,6 @@ export default function Riddle({ navigation, route }) {
         answer.answer.toString().toLowerCase() ===
         textAnswer.toString().toLowerCase().trim()
       ) {
-        // Alert.alert("Correct", "yes! you have the right answer");
         setFinishedQuestion(true);
         await updateRiddle(riddle.id, (solved = true));
         setEditableButtons(false);
@@ -262,13 +266,11 @@ export default function Riddle({ navigation, route }) {
       setEditableButtons(true);
       setLoadingModal(false);
       setFinishedQuestion(false);
-      const nextRiddle = riddles.filter(
-        (riddle) => riddle.id === nextNumber
-      );
-      navigation.replace("Riddle",{
-        riddle:nextRiddle[0],
-        unsolvedRiddles
-      })
+      const nextRiddle = riddles.filter((riddle) => riddle.id === nextNumber);
+      navigation.replace("Riddle", {
+        riddle: nextRiddle[0],
+        unsolvedRiddles,
+      });
     }
   };
   return (
