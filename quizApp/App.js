@@ -16,8 +16,6 @@ export default function App() {
 
   useEffect(() => {
     getMyObject().then(({data,numSolved}) => {
-      console.log(numSolved);
-      console.log(typeof(numSolved));
       setUserData(data);
       setCounter(numSolved)
       setLoading(false);

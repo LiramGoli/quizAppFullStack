@@ -72,18 +72,22 @@ const DifficultyMenu = ({ navigation }) => {
       <View style={styles.header}>
         <CustomHeaderFront />
       </View>
-      <View style={styles.content}>
+
+      <View style={{...styles.content,flex:1}}>
+        <View >
         <TouchableOpacity
           key="Easy"
-          style={styles.button}
+          hitSlop={10}
+          style={{...styles.button}}
           onPress={() => {
             pressHandler("Easy");
           }}
         >
           <Text style={styles.buttonText}>Easy</Text>
         </TouchableOpacity>
+        </View>
         <Animated.View
-          style={{ transform: [{ translateX: animMedium.current }] }}
+          style={{ transform: [{ translateX: animMedium.current }]}}
         >
           <TouchableOpacity
             key="Medium"
@@ -92,6 +96,7 @@ const DifficultyMenu = ({ navigation }) => {
               counter < 3 ? shake(animMedium) : pressHandler("Medium");
             }}
           >
+            {counter<3 &&<Text style={styles.buttonText}>{counter % 25}/15</Text>}
             <Text style={styles.buttonText}>Medium</Text>
           </TouchableOpacity>
         </Animated.View>
@@ -106,6 +111,7 @@ const DifficultyMenu = ({ navigation }) => {
               counter < 5 ? shake(animHard) : pressHandler("Hard");
             }}
           >
+            {counter<5 &&<Text style={styles.buttonText}>{counter % 25}/25</Text>}
             <Text style={styles.buttonText}>Hard</Text>
           </TouchableOpacity>
         </Animated.View>
@@ -118,7 +124,6 @@ const DifficultyMenu = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
     position: "relative",
   },
   header: {
@@ -127,34 +132,31 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 1,
-    marginBottom: 50,
+    // marginBottom: 1500,
   },
   content: {
     flex: 1,
+    // backgroundColor:'white',
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 200,
+    marginTop: 250,
   },
   buttonText: {
     color: "#ffffff",
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: "bold",
     textAlign: "center",
   },
   button: {
+    // flex: 1,
     backgroundColor: "#000000",
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 12,
     marginVertical: 10,
-    width: 120,
-  },
-  animation: {
-    flexWrap: "wrap",
-    alignContent: "flex-start",
-    position: "absolute",
-    height: "100%",
-    width: "100%",
+    width: 190,
+    height: 60,
+    justifyContent: "center",
   },
   disabledButton: {
     opacity: 0.5,

@@ -48,8 +48,6 @@ export default function Riddle({ navigation, route }) {
   const { riddle, unsolvedRiddles } = route.params;
   const { userData, setUserData } = useContext(UserContext);
   const { counter, setCounter } = useContext(CounterContext);
-  console.log(counter);
-  // console.log(typeof(counter));
   const [userUsedHint, setUserUsedHint] = useState(false);
   const [userUsedAnswer, setUserUsedAnswer] = useState(false);
   const [interstitialLoaded, setInterstitialLoaded] = useState(false);

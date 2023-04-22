@@ -52,8 +52,11 @@ export default function RiddlesMenu({ route, navigation }) {
     key: index.toString(),
     button: (
       <TouchableOpacity
+        key={riddle.id.toString()}
         style={
-          findSolved(riddle.id) === false ? styles.button : {...styles.button,backgroundColor: "rgba(90, 250, 30, 0.3)"}
+          findSolved(riddle.id) === false
+            ? styles.button
+            : { ...styles.button, backgroundColor: "rgba(90, 250, 30, 0.3)" }
         }
         onPress={() => OpenRiddle(riddle.id)}
       >
