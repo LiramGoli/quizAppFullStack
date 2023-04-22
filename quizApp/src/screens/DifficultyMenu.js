@@ -89,7 +89,7 @@ const DifficultyMenu = ({ navigation }) => {
             key="Medium"
             style={[styles.button, counter < 3 && styles.disabledButton]}
             onPress={() => {
-              counter < 3 ? shake(animMedium) : pressHandler("Hard");
+              counter < 3 ? shake(animMedium) : pressHandler("Medium");
             }}
           >
             <Text style={styles.buttonText}>Medium</Text>

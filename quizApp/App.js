@@ -8,13 +8,16 @@ import { useEffect, useState } from "react";
 import UserContext from "./src/context/UserContext";
 import CounterContext from "./src/context/CounterContext";
 
+
 export default function App() {
   const [userData, setUserData] = useState();
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getMyObject().then(({data,numSolved}) => {
+      console.log(numSolved);
+      console.log(typeof(numSolved));
       setUserData(data);
       setCounter(numSolved)
       setLoading(false);
@@ -24,9 +27,9 @@ export default function App() {
   const getMyObject = async () => {
     try {
       const jsonValue = await retrieveData("@riddleData");
+      const solvedJson= await retrieveData("@NumSolved");
       const data = jsonValue != null ? JSON.parse(jsonValue) : null;
-      const solvedJson=await retrieveData("@NumSolved");
-      const numSolved=solvedJson != null ? Number(JSON.parse(solvedJson)) : 0;
+      const numSolved= solvedJson != null ? JSON.parse(solvedJson):0;
       return {data,numSolved};
     } catch (e) {
       console.log(e);

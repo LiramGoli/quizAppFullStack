@@ -10,21 +10,24 @@ import LottieView from "lottie-react-native";
 import ModalAnimationDict from "../ModalAnimationDict";
 import { Entypo, FontAwesome5 } from "@expo/vector-icons";
 
+
+
 export default function SuccessModal({
   visible,
   onNextQuestion,
   onGoToMenu,
   setFinishedQuestion,
+  riddleID
 }) {
   const closeModal = () => {
     setFinishedQuestion(false);
   };
   const chooseAnimation = () => {
     let size = Object.keys(ModalAnimationDict).length;
-    const num = Math.floor(Math.random() * size) + 1;
-    return ModalAnimationDict[num].image;
+    return ModalAnimationDict[(riddleID%size)+1].image;
   };
-
+  animation=chooseAnimation()
+  
   return (
     <Modal
       animationType="fade"
@@ -36,7 +39,7 @@ export default function SuccessModal({
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <LottieView
-              source={chooseAnimation()}
+              source={animation}
               autoPlay
               loop={false}
               style={{ width: 100, height: 100 }}

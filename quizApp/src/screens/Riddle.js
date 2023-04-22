@@ -13,6 +13,7 @@ import {
 
 import riddles from "../utils/riddles.json";
 import UserContext from "../context/UserContext";
+import CounterContext from "../context/CounterContext";
 import HintButton from "../utils/Buttons/HintButton";
 import AnswerButton from "../utils/Buttons/AnswerButton";
 import SubmitButton from "../utils/Buttons/SubmitButton";
@@ -41,12 +42,14 @@ import { AdEventType } from "react-native-google-mobile-ads";
 import LottieView from "lottie-react-native";
 import fullScreenAnimationDict from "../utils/FullScreenAnimationDict";
 import CustomHeader from "../utils/CustomHeader";
-import CounterContext from "../context/CounterContext";
+
 
 export default function Riddle({ navigation, route }) {
   const { riddle, unsolvedRiddles } = route.params;
   const { userData, setUserData } = useContext(UserContext);
   const { counter, setCounter } = useContext(CounterContext);
+  console.log(counter);
+  // console.log(typeof(counter));
   const [userUsedHint, setUserUsedHint] = useState(false);
   const [userUsedAnswer, setUserUsedAnswer] = useState(false);
   const [interstitialLoaded, setInterstitialLoaded] = useState(false);
@@ -132,6 +135,10 @@ export default function Riddle({ navigation, route }) {
       usedAnswer: false,
     };
     if (Correct) {
+      try {
+      await storeData("@NumSolved", (counter+1).toString());}
+      catch(e){console.log(e);}
+
       answer = {
         ...userAnswer,
         answer: textAnswer,
@@ -149,8 +156,6 @@ export default function Riddle({ navigation, route }) {
     const jsonValue = JSON.stringify(newAnswer);
     try {
       await storeData("@riddleData", jsonValue);
-      setCounter(counter + 1);
-      await storeData("@NumSolved", counter.toString());
     } catch (error) {}
   };
 
@@ -189,6 +194,7 @@ export default function Riddle({ navigation, route }) {
         answer.answer.toString().toLowerCase() ===
         textAnswer.toString().toLowerCase().trim()
       ) {
+        setCounter(counter+1);
         setFinishedQuestion(true);
         await updateRiddle(riddle.id, (solved = true));
         setEditableButtons(false);
@@ -320,6 +326,7 @@ export default function Riddle({ navigation, route }) {
               onNextQuestion={nextQuestion}
               onGoToMenu={goToMenu}
               setFinishedQuestion={setFinishedQuestion}
+              riddleID={riddle.id}
             />
           )}
 

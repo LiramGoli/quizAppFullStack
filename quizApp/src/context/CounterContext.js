@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 const CounterContext = createContext({
-  counter: 0,
+  counter: null,
   setCounter: () => {},
 });
 
