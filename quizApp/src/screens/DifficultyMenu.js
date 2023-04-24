@@ -9,7 +9,7 @@ import {
 import BottomBanner from "../utils/Ads/bottomBanners";
 import LottieView from "lottie-react-native";
 import globalStyles from "../utils/GlobalStyles";
-import CustomHeaderFront from "../utils/CustomHeaderFront";
+import CustomHeaderFront from "../utils/Headers/CustomHeaderFront";
 import CounterContext from "../context/CounterContext";
 import { useContext, useRef, useCallback } from "react";
 
@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: "relative",
+    backgroundColor:'white'
   },
   header: {
     position: "absolute",

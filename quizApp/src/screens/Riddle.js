@@ -41,8 +41,7 @@ import globalStyles from "../utils/GlobalStyles";
 import { AdEventType } from "react-native-google-mobile-ads";
 import LottieView from "lottie-react-native";
 import fullScreenAnimationDict from "../utils/FullScreenAnimationDict";
-import CustomHeader from "../utils/CustomHeader";
-
+import CustomHeader from "../utils/Headers/CustomHeader";
 
 export default function Riddle({ navigation, route }) {
   const { riddle, unsolvedRiddles } = route.params;

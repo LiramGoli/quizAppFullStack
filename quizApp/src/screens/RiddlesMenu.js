@@ -7,7 +7,8 @@ import UserContext from "../context/UserContext";
 import BottomBanner from "../utils/Ads/bottomBanners";
 import LottieView from "lottie-react-native";
 import globalStyles from "../utils/GlobalStyles";
-import CustomHeader from "../utils/CustomHeader";
+import CustomHeader from "../utils/Headers/CustomHeader";
+import CapsuleHeader from "../utils/Headers/CapsuleHeader";
 
 export default function RiddlesMenu({ route, navigation }) {
   const { difficulty } = route.params;
@@ -52,11 +53,9 @@ export default function RiddlesMenu({ route, navigation }) {
     key: index.toString(),
     button: (
       <TouchableOpacity
-        key={riddle.id.toString()}
+      key={riddle.id.toString()}
         style={
-          findSolved(riddle.id) === false
-            ? styles.button
-            : { ...styles.button, backgroundColor: "rgba(90, 250, 30, 0.3)" }
+          findSolved(riddle.id) === false ? styles.button : {...styles.button,backgroundColor: "rgba(90, 250, 30, 0.3)"}
         }
         onPress={() => OpenRiddle(riddle.id)}
       >
@@ -86,6 +85,7 @@ export default function RiddlesMenu({ route, navigation }) {
         resizeMode="cover"
       />
       <CustomHeader title={difficultyEnum[difficulty]} />
+      <View style={{marginBottom:20}}/>
       <FlatList
         data={rows}
         keyExtractor={(item, index) => index.toString()}
@@ -101,12 +101,13 @@ export default function RiddlesMenu({ route, navigation }) {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    margin: 10,
+    margin: 6,
     flexDirection: "row",
     flexWrap: "wrap",
     alignContent: "flex-start",
     justifyContent: "center",
     paddingTop: 10,
+    // backgroundColor:'white'
   },
   button: {
     width: 70,
