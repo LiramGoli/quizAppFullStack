@@ -133,11 +133,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 1,
-    // marginBottom: 1500,
   },
   content: {
     flex: 1,
-    // backgroundColor:'white',
     alignItems: "center",
     justifyContent: "center",
     marginTop: 250,
@@ -149,8 +147,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    // flex: 1,
-    backgroundColor: "#000000",
+    backgroundColor: 'rgba(15, 50, 100, 0.7)',
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 12,
