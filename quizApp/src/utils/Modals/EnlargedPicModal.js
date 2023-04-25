@@ -17,7 +17,7 @@ export default function EnlargedPicModal({
         setPicModalVisible(false);
       }}
     >
-      <TouchableWithoutFeedback onPress={() => setPicModalVisible(false)}>
+      <TouchableWithoutFeedback >
         <View style={globalStyles.modalImageContainer}>
           <Image style={globalStyles.modalImage} source={image} />
         </View>
