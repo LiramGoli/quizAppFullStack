@@ -8,7 +8,7 @@ import BottomBanner from "../utils/Ads/bottomBanners";
 import LottieView from "lottie-react-native";
 import globalStyles from "../utils/GlobalStyles";
 import CustomHeader from "../utils/Headers/CustomHeader";
-import CapsuleHeader from "../utils/Headers/CapsuleHeader";
+
 
 export default function RiddlesMenu({ route, navigation }) {
   const { difficulty } = route.params;

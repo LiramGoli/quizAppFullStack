@@ -8,26 +8,25 @@ import {
 } from "react-native";
 import LottieView from "lottie-react-native";
 import ModalAnimationDict from "../ModalAnimationDict";
-import { Entypo, FontAwesome5 } from "@expo/vector-icons";
-
-
+import { Entypo } from "@expo/vector-icons";
+import PlaySound from "../PlaySound";
 
 export default function SuccessModal({
   visible,
   onNextQuestion,
   onGoToMenu,
   setFinishedQuestion,
-  riddleID
+  riddleID,
 }) {
   const closeModal = () => {
     setFinishedQuestion(false);
   };
   const chooseAnimation = () => {
     let size = Object.keys(ModalAnimationDict).length;
-    return ModalAnimationDict[(riddleID%size)+1].image;
+    return ModalAnimationDict[(riddleID % size) + 1].image;
   };
-  animation=chooseAnimation()
-  
+  animation = chooseAnimation();
+
   return (
     <Modal
       animationType="fade"
@@ -44,6 +43,8 @@ export default function SuccessModal({
               loop={false}
               style={{ width: 100, height: 100 }}
             />
+            <PlaySound audio={1}/>
+
             <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
               <Text style={styles.closeButtonText}>X</Text>
             </TouchableOpacity>
@@ -56,7 +57,6 @@ export default function SuccessModal({
                 onPress={onGoToMenu}
               >
                 <Entypo name="back" size={25} color="white" />
-                {/* <FontAwesome5 name="backward" size={25} color="white"/> */}
               </TouchableOpacity>
               <TouchableOpacity
                 style={{ ...styles.button, flex: 5 }}
@@ -117,6 +117,6 @@ const styles = {
     color: "#fff",
     fontWeight: "bold",
     textAlign: "center",
-    fontSize: 22
+    fontSize: 22,
   },
 };

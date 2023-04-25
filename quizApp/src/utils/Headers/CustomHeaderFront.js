@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Image } from "react-native";
 import CapsuleHeader from "./CapsuleHeader";
 
+
 const CustomHeaderFront = ({ title }) => {
   return (
     <View style={styles.container}>

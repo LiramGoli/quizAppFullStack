@@ -133,8 +133,10 @@ export default function Riddle({ navigation, route }) {
     };
     if (Correct) {
       try {
-      await storeData("@NumSolved", (counter+1).toString());}
-      catch(e){console.log(e);}
+        await storeData("@NumSolved", (counter + 1).toString());
+      } catch (e) {
+        console.log(e);
+      }
 
       answer = {
         ...userAnswer,
@@ -191,7 +193,7 @@ export default function Riddle({ navigation, route }) {
         answer.answer.toString().toLowerCase() ===
         textAnswer.toString().toLowerCase().trim()
       ) {
-        setCounter(counter+1);
+        setCounter(counter + 1);
         setFinishedQuestion(true);
         await updateRiddle(riddle.id, (solved = true));
         setEditableButtons(false);
