@@ -61,6 +61,7 @@ export default function SuccessModal({
               <TouchableOpacity
                 style={{ ...styles.button, flex: 5 }}
                 onPress={onNextQuestion}
+                hitSlop={10}
               >
                 <Text style={styles.buttonText}>Next Question</Text>
               </TouchableOpacity>

@@ -1,6 +1,6 @@
 import globalStyles from "../GlobalStyles";
 import { TouchableOpacity, Alert, StyleSheet, Text } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons,MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function HintButton({
   updateDBFunction,
@@ -23,7 +23,10 @@ export default function HintButton({
         }
       }}
     >
-      <MaterialIcons name="lightbulb" size={40} color="#ffffff" />
+      {/* <MaterialIcons name="lightbulb" size={40} color="#ffffff" /> */}
+      <MaterialCommunityIcons name="lightbulb-on-outline" size={45} color='rgba(15, 50, 100, 0.9)' />
+      <Text>Hint</Text>
+
     </TouchableOpacity>
   );
 }

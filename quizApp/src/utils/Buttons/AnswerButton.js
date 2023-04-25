@@ -1,6 +1,6 @@
 import globalStyles from "../GlobalStyles";
 import { TouchableOpacity, Alert, Text, StyleSheet } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons,Entypo } from "@expo/vector-icons";
 
 export default function HintButton({
   hintAlertUsed,
@@ -13,7 +13,7 @@ export default function HintButton({
 
   return (
     <TouchableOpacity
-      style={{ ...globalStyles.button, ...styles}}
+      style={{ ...globalStyles.button, ...styles,bottom:18}}
       onPress={() => {
         if (!hintAlertUsed) {
           // show ads
@@ -35,7 +35,9 @@ export default function HintButton({
         }
       }}
     >
-      <MaterialIcons name="support" size={40} color="#ffffff" />
+      {/* <MaterialIcons name="support" size={40} color="#ffffff" /> */}
+      <Entypo name="lifebuoy" size={40} color='rgba(15, 50, 100, 0.9)'/>
+      <Text>Answer</Text>
     </TouchableOpacity>
   );
 }

@@ -2,16 +2,15 @@ import { StyleSheet } from "react-native";
 
 const globalStyles = StyleSheet.create({
   button: {
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
     borderRadius: 30,
-    backgroundColor: 'rgba(15, 50, 100, 0.9)',
+    backgroundColor: 'rgba(255, 255, 255, 0)',
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    left: 10,
+    left: 15,
     bottom: 20,
-    elevation: 5,
   },
   modalImageContainer: {
     flex: 1,

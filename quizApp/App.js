@@ -45,7 +45,7 @@ export default function App() {
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
       <CounterContext.Provider value={{ counter, setCounter }}>
-        <StatusBar translucent backgroundColor="transparent" />
+        <StatusBar translucent backgroundColor="transparent" style=""/>
         <NavigationContainer>
           <RiddleStack />
         </NavigationContainer>

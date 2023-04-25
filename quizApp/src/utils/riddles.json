@@ -107,8 +107,8 @@
     "title": "What gets wet when drying?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "What does Drying mean?",
+    "explanation": "The answer is Towel.Towel gets wet when drying stuff.",
     "answers": [{ "answer": "towel" }, { "answer": "paper towel" }]
   },
   {
@@ -117,8 +117,8 @@
     "title": "A mother and the father have three daughters\neach daughter has one brother\nhow many children do the mother and the father have in total?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "Remember They are all 1 family.",
+    "explanation": "The answer is 4, Thw 3 sisters has the same brother.",
     "answers": [{ "answer": 4 }, { "answer": "four" }]
   },
   {
@@ -127,8 +127,8 @@
     "title": "What part of London is in France?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "It's not about geography",
+    "explanation": "The answer is n. the letter n is the only thing they both have in common",
     "answers": [
       { "answer": "n" },
       { "answer": "the letter n" },
@@ -155,8 +155,8 @@
     "title": "I have one letter but my name is spelled with eight. What am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "what is letter?",
+    "explanation": "The answer is envelope.An envelope has a letter and is spelled with 8 letters(e-n-v-e-l-o-p-e)",
     "answers": [{ "answer": "envelope" }, { "answer": "an envelope" }]
   },
   {
@@ -165,8 +165,8 @@
     "title": "Feed Me and it will give me life,\nbut give me a drink and I will die.\nWho am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "What dies when water touches it? ",
+    "explanation": "Fire. When you feed fire it grows, but when you pour water it dies. ",
     "answers": [{ "answer": "fire" }, { "answer": "a fire" }]
   },
   {
@@ -192,9 +192,9 @@
   {
     "id": 18,
     "type": "Text",
-    "title": "If the 3rd of March,\n8th of November,\nand 9th of September are all the same,\nthan what in October is also the same?",
+    "title": "If the 3rd of March,\n8th of November,\nand 9th of September\nare all the same,than what in October is also the same?",
     "image": 0,
-    "difficulty": 2,
+    "difficulty": 3,
     "hint": "",
     "explanation": "",
     "answers": [
@@ -244,7 +244,7 @@
     "type": "Text",
     "title": "Complete the missing number:",
     "image": 6,
-    "difficulty": 2,
+    "difficulty": 3,
     "hint": "",
     "explanation": "",
     "answers": [{ "answer": "40" }, { "answer": "forty " }]
@@ -303,8 +303,8 @@
     "title": "I have keys but can't open any lock,\nI have space but no room.\nWho am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "what has keys and space on it?",
+    "explanation": "A keybord has keys on it and also a space key but can't open a lock and does not have a room.  ",
     "answers": [{ "answer": "keyboard" }, { "answer": "a keyboard" }]
   },
   {
@@ -313,8 +313,8 @@
     "title": "Avner the gardener connected 2 piles of leave with another 2 piles of leaves.\nHow many stacks does he have now?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "What happenes when gathering piles of leaves?",
+    "explanation": "The answer is 1. He gathered them all together and now has one big pile.",
     "answers": [
       { "answer": "1" },
       { "answer": "one" },
@@ -357,7 +357,487 @@
       { "answer": "b,r" },
       { "answer": "r,b" },
       { "answer": "b and r" },
-      { "answer": "r and b" }
+      { "answer": "r and b" },
+      { "answer": "b & r" },
+      { "answer": "b &r" },
+      { "answer": "b& r" },
+      { "answer": "b&r" },
+      { "answer": "r & b" },
+      { "answer": "r &b" },
+      { "answer": "r& b" },
+      { "answer": "r&b" }
+    ]
+  },
+  {
+    "id": 30,
+    "type": "Text",
+    "title": "If you flip a reguler coin 4 times,\nand every time you get tails.\nwhat are the odds of getting tails on the 5th flip?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "if You will only flip the coin just twice will the odds be?",
+    "explanation": "The ods are always 1/2\nIt dosent matter how many time you flip the coin.",
+    "answers": [
+      { "answer": "50%" },
+      { "answer": "1/2" },
+      { "answer": "fifty percent" },
+      { "answer": "fifty percents" },
+      { "answer": "50 percents" },
+      { "answer": "50 percents" },
+      { "answer": "1\\2" }
+    ]
+  },
+  {
+    "id": 31,
+    "type": "Text",
+    "title": "There is a book on the shelf.\nIt's the third book from the right\nand the fifth book from the left.\nHow many books are there on the shelf?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "drawing it might help",
+    "explanation": "There are 7 books.\nif the book is 3rd from the right it means there are 2 more books to it's right\nfifth from the left means 4 from it's left.\n4+2+1(the book itself)=7.",
+    "answers": [
+      { "answer": 7 },
+      { "answer": "seven" },
+      { "answer": "7 books" },
+      { "answer": "seven books" },
+      { "answer": "there are 7 books" },
+      { "answer": "there are seven books" }
+    ]
+  },
+  {
+    "id": 32,
+    "type": "Text",
+    "title": "What is the missing letter?",
+    "image": 8,
+    "difficulty": 1,
+    "hint": "All of those letters have something in common.",
+    "explanation": "The answer is i.\n a,e,i,o,u are vouls in english.",
+    "answers": [
+      { "answer": "i" },
+      { "answer": "the letter i" }
+    ]
+  },
+  {
+    "id": 33,
+    "type": "Text",
+    "title": "My uncle has a shop. \nhe sells a doll for 20$,\nrobot for 25$, puzzle for 30$.\nhow much does a calculator cost? ",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "?",
+    "explanation": "The answer is 50$. Everything costs 5*number of letters. calculator has 10 letters.10*5=50.",
+    "answers": [
+      { "answer": 50 },
+      { "answer": "50 $" },
+      { "answer": "50$" },
+      { "answer": "50 dollar" },
+      { "answer": "50 dollars" },
+      { "answer": "50 bucks" },
+      { "answer": "fifty" },
+      { "answer": "fifty $" },
+      { "answer": "fifty bucks" },
+      { "answer": "fifty dollar" },
+      { "answer": "fifty dollars" }
+    ]
+  },
+  {
+    "id": 34,
+    "type": "Text",
+    "title": "complete the missing letter: ",
+    "image": 9,
+    "difficulty": 1,
+    "hint": "All of those letters have something in common.",
+    "explanation": "The answer is s. the letters represents the first letter of the notes:\nDo, Re, Mi, Fa, Sol, La, and Si",
+    "answers": [
+      { "answer": "s"}
+    ]
+  },
+  {
+    "id": 35,
+    "type": "Text",
+    "title": "A newspaper has 20 pages including front cover and back cover.how many times do you need to flip a page in order to read all of the paper? ",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "Best way to do this is mimicing fliping pages.",
+    "explanation": "The answer is 10 times.\nSome people think it's 9 beacuse the forget the back cover",
+    "answers": [
+      { "answer": 10 },
+      { "answer": "ten" },
+      { "answer": "10 times" },
+      { "answer": "ten times" }
+    ]
+  },
+  {
+    "id": 36,
+    "type": "Text",
+    "title": "after 2022 FIFA World Cup,\nassuming the event is held every four years.what will be the next world cup to start and finish\nin the same digit?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "There is no trick here, go over the years.",
+    "explanation": "The answer is 2042,\nwhich 20 years from 2022 or 5 world cups",
+    "answers": [
+      { "answer": 2042 }
+    ]
+  },
+  {
+    "id": 37,
+    "type": "Text",
+    "title": "How many cubes are in this Picture?",
+    "image": 10,
+    "difficulty": 2,
+    "hint": "No trick here, Start Counting",
+    "explanation": "The answer is 66,\n15 on each side plus 6 in the middle pillar.",
+    "answers": [
+      { "answer": 66 },
+      { "answer": "sixty six" },
+      { "answer": "sixty-six" }
+    ]
+  },
+  {
+    "id": 38,
+    "type": "Text",
+    "title": "What is the missing number?",
+    "image": 11,
+    "difficulty": 3,
+    "hint": "Ignore the 3. What does 6 and 9 has in common?",
+    "explanation": "the answer is 3.\nthe answer is how many circles the numbers have.\n in the number 871205 there are 3 circles\n",
+    "answers": [
+      { "answer": 3 },
+      { "answer": "the number is 3" },
+      { "answer": "the missing number is 3" },
+      { "answer": "three" },
+      { "answer": "the number is three" },
+      { "answer": "the missing number is three" }
+    ]
+  },
+  {
+    "id": 39,
+    "type": "Text",
+    "title": "What is the answer?",
+    "image": 12,
+    "difficulty": 3,
+    "hint": "check the numbers digit by digit",
+    "explanation": "the answer is 0.\nthe answer is how many even digits each number has.",
+    "answers": [
+      { "answer": 0 },
+      { "answer": "the answer is 0" },
+      { "answer": "zero" },
+      { "answer": "the answer is zero" }
+    ]
+  },
+  {
+    "id": 40,
+    "type": "Text",
+    "title": "Take a look at the image and answer:",
+    "image": 13,
+    "difficulty": 2,
+    "hint": "own lee=only too=two...",
+    "explanation": "the answer is: this, words.\nthe only two words that are right in this sentence.",
+    "answers": [
+      { "answer": "this words" },
+      { "answer": "words this" },
+      { "answer": "words and this" },
+      { "answer": "words, this" },
+      { "answer": "words ,this" },
+      { "answer": "words,this" },
+      { "answer": "words , this" },
+      { "answer": "words & this" },
+      { "answer": "words& this" },
+      { "answer": "words &this" },
+      { "answer": "words&this" },
+      { "answer": "this and words" },
+      { "answer": "this, words" },
+      { "answer": "this ,words" },
+      { "answer": "this,words" },
+      { "answer": "this , words" },
+      { "answer": "this & words" },
+      { "answer": "this& words" },
+      { "answer": "this &words" },
+      { "answer": "this&words" }
+    ]
+  },
+  {
+    "id": 41,
+    "type": "Text",
+    "title": "What number between 1 and 100\nhas the most syllables when said outloud?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "look at a smaller scope of numbers and try to find logic.",
+    "explanation": "the answer is 77.\n7 is the only number between 1 and 10 that has 2 syllables-the rest has 1.So, it has to be 77.",
+    "answers": [
+      { "answer": 77 },
+      { "answer": "seventy seven" },
+      { "answer": "seventy-seven" }
+    ]
+  },
+  {
+    "id": 42,
+    "type": "Text",
+    "title": "what 3 word expression is written in the image?",
+    "image": 14,
+    "difficulty": 3,
+    "hint": "it's a well known expression",
+    "explanation": "the answer is Deep in thought.\nThe word deep is in the word thought.",
+    "answers": [
+      { "answer": "Deep in thought" }
+    ]
+  },
+  {
+    "id": 43,
+    "type": "Text",
+    "title": "remove five letters to find the name of the famous singer:",
+    "image": 15,
+    "difficulty": 3,
+    "hint": "did you remove five letters?",
+    "explanation": "the answer is shakira.\nremoving the letters 'f-i-v-e-l-e-t-t-e-r-s' will leave the word shakira.",
+    "answers": [
+      { "answer": "shakira" }
+    ]
+  },
+  {
+    "id": 44,
+    "type": "Text",
+    "title": "what animal is half goat and one third cow?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "what is half of \"goat\"?",
+    "explanation": "the answer is cat.\none third of cow is C.\none half of goat is AT\n C+AT=CAT",
+    "answers": [
+      { "answer": "cat" },
+      { "answer": "a cat" }
+    ]
+  },
+  {
+    "id": 45,
+    "type": "Text",
+    "title": "What can be placed between 4 and 9\nto produce a number bigger than 4\nand smaller than 9?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "no trick. think of it like math homework",
+    "explanation": "the answer is decimal point.\nif you put a decimal point between 4 and 9 it becomes 4.9",
+    "answers": [
+      { "answer": "decimal point" },
+      { "answer": "decimal marker" },
+      { "answer": "decimal separator" },
+      { "answer": "point" },
+      { "answer": "period" },
+      { "answer": "." },
+      { "answer": "dot" }
+    ]
+  },
+  {
+    "id": 46,
+    "type": "Text",
+    "title": "What two leters are missng here?",
+    "image": 16,
+    "difficulty": 2,
+    "hint": "make sure you are looking at the right thing.",
+    "explanation": "the answer is t and i.\nthe eye is drawn to the image.\nbut the two letters are actually missing from the text above.",
+    "answers": [
+      { "answer": "ti" },
+      { "answer": "t,i" },
+      { "answer": "t ,i" },
+      { "answer": "t, i" },
+      { "answer": "t , i" },
+      { "answer": "t and i" },
+      { "answer": "t&i" },
+      { "answer": "t &i" },
+      { "answer": "t& i" },
+      { "answer": "t & i" },
+      { "answer": "it" },
+      { "answer": "i,t" },
+      { "answer": "i ,t" },
+      { "answer": "i, t" },
+      { "answer": "i , t" },
+      { "answer": "i and t" },
+      { "answer": "i&t" },
+      { "answer": "i &t" },
+      { "answer": "i& t" },
+      { "answer": "i & t" }
+    ]
+  },
+  {
+    "id": 47,
+    "type": "Text",
+    "title": "What is the only letter of the alphabet missing from this extremely tricky and devious quiz question?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "no trick.only one letter is missing here",
+    "explanation": "the answer is j.",
+    "answers": [
+      { "answer": "j" },
+      { "answer": "the letter j" },
+      { "answer": "the missing letter is j" }
+    ]
+  },
+  {
+    "id": 48,
+    "type": "Text",
+    "title": "which 2 letters are missing from this tounge twister?\n \"_H_ __LLS S_A _H_LL_ BY TH_ __A _HOR_\"",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "one of the letters is e",
+    "explanation": "the answer is s,e.\n SHE SELLS SEASHELLS BY THE SEASHORE",
+    "answers": [
+      { "answer": "s,e" },
+      { "answer": "s ,e" },
+      { "answer": "s, e" },
+      { "answer": "s , e" },
+      { "answer": "s&e" },
+      { "answer": "s &e" },
+      { "answer": "s& e" },
+      { "answer": "s & e" },
+      { "answer": "s and e" },
+      { "answer": "the letters are s and e" },
+      { "answer": "the letters are s,e" },
+      { "answer": "the letters are s, e" },
+      { "answer": "the letters are s ,e" },
+      { "answer": "the letters are s , e" },
+      { "answer": "the missing letters are s&e" },
+      { "answer": "the missing letters are s& e" },
+      { "answer": "the missing letters are s &e" },
+      { "answer": "the missing letters are s & e" },
+      { "answer": "the missing letters are s and e" },
+      { "answer": "the missing letters are s,e" },
+      { "answer": "the missing letters are s, e" },
+      { "answer": "the missing letters are s ,e" },
+      { "answer": "the missing letters are s , e" },
+      { "answer": "the missing letters are s&e" },
+      { "answer": "the missing letters are s& e" },
+      { "answer": "the missing letters are s &e" },
+      { "answer": "the missing letters are s & e" },
+      { "answer": "e,s" },
+      { "answer": "e ,s" },
+      { "answer": "e, s" },
+      { "answer": "e , s" },
+      { "answer": "s , e" },
+      { "answer": "e&s" },
+      { "answer": "e &s" },
+      { "answer": "e& s" },
+      { "answer": "e & s" },
+      { "answer": "s and s" },
+      { "answer": "the letters are e and s" },
+      { "answer": "the letters are e,s" },
+      { "answer": "the letters are e, s" },
+      { "answer": "the letters are e ,s" },
+      { "answer": "the letters are e , s" },
+      { "answer": "the missing letters are e&s" },
+      { "answer": "the missing letters are e& s" },
+      { "answer": "the missing letters are e &s" },
+      { "answer": "the missing letters are e & s" },
+      { "answer": "the missing letters are e and s" },
+      { "answer": "the missing letters are e,s" },
+      { "answer": "the missing letters are e, s" },
+      { "answer": "the missing letters are e ,s" },
+      { "answer": "the missing letters are e , s" },
+      { "answer": "the missing letters are e&s" },
+      { "answer": "the missing letters are e& s" },
+      { "answer": "the missing letters are e &s" },
+      { "answer": "the missing letters are e & s" }
+    ]
+  },
+  {
+    "id": 49,
+    "type": "Text",
+    "title": "What is the missing letter?",
+    "image": 17,
+    "difficulty": 2,
+    "hint": "these letters represent a famous pattern.",
+    "explanation": "the answer is e.\nevery letter is the first letter of the numbers one to eight",
+    "answers": [
+      { "answer": "e" },
+      { "answer": "the letter e" },
+      { "answer": "the missing letter is e" }
+    ]
+  },
+  {
+    "id": 50,
+    "type": "Text",
+    "title": "How many numbers between one to thirty does not contain 1 or 2?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "no trick here.\nstart counting.",
+    "explanation": "the answer is 8.\n3,4,5,6,7,8,9,30",
+    "answers": [
+      { "answer": "8" },
+      { "answer": "eight" },
+      { "answer": "8 numbers" },
+      { "answer": "eight numbers" }
+    ]
+  },
+  {
+    "id": 51,
+    "type": "Text",
+    "title": "What are the missing letters in this question?",
+    "image": 18,
+    "difficulty": 3,
+    "hint": "These letters were taken from not so far away....",
+    "explanation": "the answer is t,q.every letter represent the first letter of every word in this sentence",
+    "answers": [
+      { "answer": "t,q" },
+      { "answer": "t ,q" },
+      { "answer": "t, q" },
+      { "answer": "t , q" },
+      { "answer": "t&q" },
+      { "answer": "t &q" },
+      { "answer": "t& q" },
+      { "answer": "t & q" },
+      { "answer": "t and q" }
+    ]
+  },
+  {
+    "id": 52,
+    "type": "Text",
+    "title": "To which word can you add two more letters but end up with fewer?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "there is only one word that can fit this description.",
+    "explanation": "the answer is fewer.\nif you add e and r to few you get fewer",
+    "answers": [
+      { "answer": "few" },
+      { "answer": "the word few" },
+      { "answer": "the word is few" }
+    ]
+  },
+  {
+    "id": 53,
+    "type": "Text",
+    "title": "What common item of clothing can you slot in the gap to get a word:\nPAR _ _ _ S?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "what 3 letter clothing items you know?",
+    "explanation": "the answer is tie.\ninsert the word tie and you get parties",
+    "answers": [
+      { "answer": "tie" },
+      { "answer": "the word tie" },
+      { "answer": "the word is tie" }
+    ]
+  },
+  {
+    "id": 54,
+    "type": "Text",
+    "title": "What is the first number that when spelled out has it's letters in alphabetical order?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "no shortcuts. you need to go over the numbers in order to get this.\nsmall hint: bigger than 10",
+    "explanation": "the answer is forty.\n",
+    "answers": [
+      { "answer": "forty" },
+      { "answer": 40 },
+      { "answer": "the number is forty" },
+      { "answer": "the number forty" }
+    ]
+  },
+  {
+    "id": 55,
+    "type": "Text",
+    "title": "What letter can you add to the word 'ARE' to turn it from a one-syllable word to a three-syllable word?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "you need to the add the letter to the beginning of the word",
+    "explanation": "the answer is A.\n you will get the word area",
+    "answers": [
+      { "answer": "a" }
     ]
   }
+
+
 ]
