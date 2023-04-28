@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("express-async-errors");
+const serverless = require("serverless-http");
 const connectDB = require("./db/connect");
 const riddleRouter = require("./routes/collectRiddles");
 const express = require("express");
@@ -28,3 +29,4 @@ const start = async () => {
   }
 };
 start();
+module.exports.handler = serverless(app);
