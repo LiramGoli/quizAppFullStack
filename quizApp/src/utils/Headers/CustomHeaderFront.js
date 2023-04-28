@@ -21,7 +21,7 @@ const CustomHeaderFront = ({ title }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
-    height: 400,
+    height: 350,
     justifyContent: "space-between",
     paddingHorizontal: 10,
     marginTop: 20,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     width: "100%",
-    marginTop: 50,
+    marginTop: 80,
 
     marginBottom: 10,
     alignSelf: "center",
