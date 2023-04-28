@@ -54,6 +54,8 @@
     "mquery": "^5.0.0",
     "ms": "^2.0.0",
     "negotiator": "^0.6.3",
+    "netlify-cli": "^14.3.1",
+    "netlify-lambda": "^2.0.16",
     "nodemon": "^2.0.22",
     "object-inspect": "^1.12.3",
     "on-finished": "^2.4.1",
@@ -69,6 +71,7 @@
     "saslprep": "^1.0.3",
     "send": "^0.18.0",
     "serve-static": "^1.15.0",
+    "serverless-http": "^3.2.0",
     "setprototypeof": "^1.2.0",
     "side-channel": "^1.0.4",
     "sift": "^16.0.1",
@@ -87,6 +90,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
+    "build":"netlify deploy --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
