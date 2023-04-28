@@ -111,7 +111,7 @@ const DifficultyMenu = ({ navigation }) => {
               counter < 25 ? shake(animHard) : pressHandler("Hard");
             }}
           >
-            {counter<5 &&<Text style={styles.buttonText}>{counter % 25}/25</Text>}
+            {counter<25 &&<Text style={styles.buttonText}>{counter % 25}/25</Text>}
             <Text style={styles.buttonText}>Hard</Text>
           </TouchableOpacity>
         </Animated.View>
