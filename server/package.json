@@ -89,8 +89,7 @@
     "whatwg-url": "^11.0.0"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "build":"netlify deploy --prod",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
