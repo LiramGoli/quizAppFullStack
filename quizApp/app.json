@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "quizApp",
-    "slug": "quizApp",
+    "name": "Brain Tease",
+    "slug": "Brain Tease",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/AppLogo.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.liram.quizApp",

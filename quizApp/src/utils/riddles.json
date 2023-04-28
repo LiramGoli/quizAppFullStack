@@ -19,7 +19,7 @@
     "title": "My name is Railey. I changed my name to Corby. Then I changed it to John. And then I changed it to Colin and then I was called Arthur. What is my name?",
     "image": 0,
     "difficulty": 1,
-    "hint": " try to think what is the latest name...",
+    "hint": "Try to think what is the latest name...",
     "explanation": "His name is still Railey as he starts with this statement, the rest of the names are in the past.",
     "answers": [{ "answer": "Railey" }]
   },
@@ -29,7 +29,7 @@
     "title": "What is the next letter:\n S,O,E,N,S,?",
     "image": 2,
     "difficulty": 3,
-    "hint": "try associating the first letter to the first something\nsecond letter to the second something and so on...",
+    "hint": "Try associating the letters to a familiar pattern.",
     "explanation": "The Pattern is the days of the week.\nThe first letter of Sunday is S. \nthe second letter of Monday is O, and so on...\nthe answer is the sixth letter of Friday -Y  ",
     "answers": [{ "answer": "y" }]
   },
@@ -39,8 +39,8 @@
     "title": "How many triangles in the picture?",
     "image": 3,
     "difficulty": 2,
-    "hint": "count all the triangles without forgetting to count the big one and other combinations of triangles that create other triangles. ",
-    "explanation": "?",
+    "hint": "Count all the triangles without forgetting to count the big one and other combinations of triangles that create other triangles. ",
+    "explanation": "24 triangles overall.There are 3 small triangles on top. combine them and find overall 6, multiplay by the number of rows (4) and you get 24.",
     "answers": [
       { "answer": 24 },
       { "answer": "twenty four" },
@@ -53,8 +53,8 @@
     "title": "I am an odd number.\nTake away a letter and I become even.\nWhat number am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "Try to think about what number can become even after removing one letter",
-    "explanation": "By removing the letter -S from the number seven we will get the word even",
+    "hint": "Try to think about what number can become even after removing one letter.",
+    "explanation": "The number 7. By removing the letter 'S' from the noumber seven we will get the word \"even\".",
     "answers": [{ "answer": "seven" }, { "answer": 7 }]
   },
   {
@@ -73,8 +73,8 @@
     "title": "What can be seen once in a minute\ntwice in a moment \nand never in a thousand years",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "Think about this literaly. ",
+    "explanation": "The letter 'm'. The letter 'm' is found once in the word 'minute', twice in the word \"moment\", and is not found in the words \"thousand years\". ",
     "answers": [
       { "answer": "m" },
       { "answer": "the letter m" },
@@ -84,11 +84,11 @@
   {
     "id": 8,
     "type": "Text",
-    "title": "Which word is written incorrectly in a dictionary?",
+    "title": "Which word is written\nincorrectly in a dictionary?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "The dictionary does not have spelling mistakes. ",
+    "explanation": "The word \"incorrectly\". The word \"incorrectly\" is written incorrectly.",
     "answers": [{ "answer": "incorrectly" }]
   },
   {
@@ -97,8 +97,8 @@
     "title": "fill in the blank:\ncarol is Amy's only sister.\nAmy is the _____ of Carol's sister.",
     "image": 0,
     "difficulty": 3,
-    "hint": "",
-    "explanation": "",
+    "hint": "Amy is Carol's sister, so Amy is the...",
+    "explanation": "Name. Amy is Carol's sister, therefore, Amy is the name of Carol's sister. ",
     "answers": [{ "answer": "name" }]
   },
   {
@@ -114,11 +114,11 @@
   {
     "id": 11,
     "type": "Text",
-    "title": "A mother and the father have three daughters\neach daughter has one brother\nhow many children do the mother and the father have in total?",
+    "title": "A mother and the father have three daughters each daughter has one brother how many children do the mother and the father have in total?",
     "image": 0,
     "difficulty": 1,
-    "hint": "Remember They are all 1 family.",
-    "explanation": "The answer is 4, Thw 3 sisters has the same brother.",
+    "hint": "Remember They are all in the same family.",
+    "explanation": "4. Since they are family, the three sisters have one broder which makes them 4 children. ",
     "answers": [{ "answer": 4 }, { "answer": "four" }]
   },
   {
@@ -128,7 +128,7 @@
     "image": 0,
     "difficulty": 1,
     "hint": "It's not about geography",
-    "explanation": "The answer is n. the letter n is the only thing they both have in common",
+    "explanation": "The answer is N. the letter n is the only thing they both have in common",
     "answers": [
       { "answer": "n" },
       { "answer": "the letter n" },
@@ -138,10 +138,10 @@
   {
     "id": 13,
     "type": "Text",
-    "title": "I am a two digit even number. I am a square of a number, and also a cube of another number. Who am I?",
+    "title": "I am a two digit even number.\nI am a square of a number,\nand also a cube of another number. Who am I?",
     "image": 0,
     "difficulty": 2,
-    "hint": "start multiplying numbers and you are soon to find it ",
+    "hint": "start multiplying numbers to find the answer",
     "explanation": "64 is the square of 8 (8^2=64), and the cube of 4 (4^3=64)",
     "answers": [
       { "answer": 64 },
@@ -155,7 +155,7 @@
     "title": "I have one letter but my name is spelled with eight. What am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "what is letter?",
+    "hint": "Think about the definition of letter.",
     "explanation": "The answer is envelope.An envelope has a letter and is spelled with 8 letters(e-n-v-e-l-o-p-e)",
     "answers": [{ "answer": "envelope" }, { "answer": "an envelope" }]
   },
@@ -172,11 +172,11 @@
   {
     "id": 16,
     "type": "Text",
-    "title": "What two-word phrase is hidden in the picture?",
+    "title": "What two-word phrase is hidden\nin the picture?",
     "image": 4,
     "difficulty": 2,
-    "hint": "look where the arrow is pointing",
-    "explanation": "the arrow point to the top secret\nso the answer is...top secret",
+    "hint": "Notice where the arrow is pointing. ",
+    "explanation": "The answer is \"top secret\" since the arrow points on the \"secret\" that is on the top of the list. ",
     "answers": [{ "answer": "top secret" }, { "answer": "top-secret" }]
   },
   {
@@ -185,18 +185,18 @@
     "title": "Complete the missing number:",
     "image": 5,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "Find the pattern of the first and the second images.",
+    "explanation": "The answer is 4. In each shape count the times a line meets another. In the last shape, there are 4 meeting points. ",
     "answers": [{ "answer": "four" }, { "answer": "4" }]
   },
   {
     "id": 18,
     "type": "Text",
-    "title": "If the 3rd of March,\n8th of November,\nand 9th of September\nare all the same,than what in October is also the same?",
+    "title": "If the 3rd of March, 8th of November,\nand 9th of September\nare all the same,\nthan what in October is also the same?",
     "image": 0,
     "difficulty": 3,
-    "hint": "",
-    "explanation": "",
+    "hint": "Don't think about the yearly calendar...",
+    "explanation": "The answer is the 7th. The 3rd letter of march is r , the 8th letter of septmber is r ,9th letter of september is also r and the 7th letter of october is also 'r'.",
     "answers": [
       { "answer": "7" },
       { "answer": "the 7th" },
@@ -212,11 +212,11 @@
   {
     "id": 19,
     "type": "Text",
-    "title": "How many pets does Bella have in total if:\nall except two are fish,\nall except two are horses,\nand all except two are dogs?",
+    "title": "How many pets do I have in total if:\nall except two are fish,\nall except two are horses,\nand all except two are dogs?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "Think of the smallest amount of pets she has. ",
+    "explanation": "3 pets - 1 fish, 1 horse, and 1 dog. All but 2 are fish, all but 2 are horses, and all but 2 are dogs.",
     "answers": [
       { "answer": "3" },
       { "answer": "3 pets" },
@@ -235,8 +235,8 @@
     "title": "forwards I am heavy,\nbut backward I am not.\nWhat am I?",
     "image": 0,
     "difficulty": 2,
-    "hint": "",
-    "explanation": "",
+    "hint": "what is the literal backword of not?",
+    "explanation": "the answer is \"ton\", ton is heavy but backwards it spelles \"not\"",
     "answers": [{ "answer": "ton" }]
   },
   {
@@ -245,8 +245,8 @@
     "title": "Complete the missing number:",
     "image": 6,
     "difficulty": 3,
-    "hint": "",
-    "explanation": "",
+    "hint": "it's all connected",
+    "explanation": "the answer is forty. you need to calulate the last equation and add the answer of the previous one. 19+21=40",
     "answers": [{ "answer": "40" }, { "answer": "forty " }]
   },
   {
@@ -255,8 +255,8 @@
     "title": "Where does Friday comes before Thursday?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "The answer is not connected to the meaning of the words.",
+    "explanation": "The answer is dictionary. The letter 'f' comes before the letter 't' so friday will come before thursday. ",
     "answers": [
       { "answer": "in a dictionary" },
       { "answer": "a dictionary" },
@@ -269,8 +269,8 @@
     "title": "I am so fragile that even if anybody says my name I break.\nWho am I?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "what is destroyed by sound?",
+    "explanation": "the answer is silence, the second you say something there is no more silence. ",
     "answers": [{ "answer": "silence" }, { "answer": "the silence" }]
   },
   {
@@ -279,7 +279,7 @@
     "title": "6   15   18   20   ?   =   FORTY",
     "image": 0,
     "difficulty": 2,
-    "hint": "",
+    "hint": "maybe it's not math",
     "explanation": "Replace each number with the corresponding letters in the alphabet.\n6 = F, 15 = O, 18 = R, 20 = T, 25 = Y",
     "answers": [
       { "answer": "25" },
@@ -290,11 +290,11 @@
   {
     "id": 25,
     "type": "Text",
-    "title": "How many times is the letter 'A'\nused while writing the spelling of each number\nfrom 1 to 500?",
+    "title": "How many times is the letter 'A'\nused while writing the spelling of each number from 1 to 500?",
     "image": 0,
     "difficulty": 3,
-    "hint": "",
-    "explanation": "the answer is zero\n",
+    "hint": "First, chack the numbers 1-10. Then check the multiples of the number 10 until you get to 100. Lastly, check the multiples of the number 100 until you get to 500.  ",
+    "explanation": "the answer is 0. Shockingly the first time the letter a is used is at one thousand.",
     "answers": [{ "answer": "zero" }, { "answer": 0 }]
   },
   {
@@ -310,7 +310,7 @@
   {
     "id": 27,
     "type": "Text",
-    "title": "Avner the gardener connected 2 piles of leave with another 2 piles of leaves.\nHow many stacks does he have now?",
+    "title": "Avner the gardener connected 2 piles of leaves with another 2 piles of leaves.\nHow many stacks does he have now?",
     "image": 0,
     "difficulty": 1,
     "hint": "What happenes when gathering piles of leaves?",
@@ -328,8 +328,8 @@
     "title": "How many times does the number 1 appear in an analog clock?",
     "image": 0,
     "difficulty": 1,
-    "hint": "",
-    "explanation": "",
+    "hint": "Count all the 1 digits appering on the clock from 1-12. ",
+    "explanation": "5 times. The digit 1 appers at 1, 10, and 12 once and at 11 twice more. ",
     "answers": [
       { "answer": 5 },
       { "answer": "five" },
@@ -371,7 +371,7 @@
   {
     "id": 30,
     "type": "Text",
-    "title": "If you flip a reguler coin 4 times,\nand every time you get tails.\nwhat are the odds of getting tails on the 5th flip?",
+    "title": "If you flip a reguler coin 4 times,\nand every time you get tails.\nwhat are the odds of\ngetting tails on the 5th flip?",
     "image": 0,
     "difficulty": 2,
     "hint": "if You will only flip the coin just twice will the odds be?",
@@ -409,12 +409,9 @@
     "title": "What is the missing letter?",
     "image": 8,
     "difficulty": 1,
-    "hint": "All of those letters have something in common.",
+    "hint": "All of those letters have something in common that kids learn at nursery school.",
     "explanation": "The answer is i.\n a,e,i,o,u are vouls in english.",
-    "answers": [
-      { "answer": "i" },
-      { "answer": "the letter i" }
-    ]
+    "answers": [{ "answer": "i" }, { "answer": "the letter i" }]
   },
   {
     "id": 33,
@@ -422,7 +419,7 @@
     "title": "My uncle has a shop. \nhe sells a doll for 20$,\nrobot for 25$, puzzle for 30$.\nhow much does a calculator cost? ",
     "image": 0,
     "difficulty": 2,
-    "hint": "?",
+    "hint": "have you figured out why doll is exatcly 20$?",
     "explanation": "The answer is 50$. Everything costs 5*number of letters. calculator has 10 letters.10*5=50.",
     "answers": [
       { "answer": 50 },
@@ -444,11 +441,9 @@
     "title": "complete the missing letter: ",
     "image": 9,
     "difficulty": 1,
-    "hint": "All of those letters have something in common.",
+    "hint": "All of those letters belong to the same group.",
     "explanation": "The answer is s. the letters represents the first letter of the notes:\nDo, Re, Mi, Fa, Sol, La, and Si",
-    "answers": [
-      { "answer": "s"}
-    ]
+    "answers": [{ "answer": "s" }]
   },
   {
     "id": 35,
@@ -456,7 +451,7 @@
     "title": "A newspaper has 20 pages including front cover and back cover.how many times do you need to flip a page in order to read all of the paper? ",
     "image": 0,
     "difficulty": 2,
-    "hint": "Best way to do this is mimicing fliping pages.",
+    "hint": "Best way to do this is to grab book and try it",
     "explanation": "The answer is 10 times.\nSome people think it's 9 beacuse the forget the back cover",
     "answers": [
       { "answer": 10 },
@@ -468,14 +463,12 @@
   {
     "id": 36,
     "type": "Text",
-    "title": "after 2022 FIFA World Cup,\nassuming the event is held every four years.what will be the next world cup to start and finish\nin the same digit?",
+    "title": "after 2022 FIFA World Cup,\nassuming the event is held every four years.what will be the next world cup to start and finish in the same digit?",
     "image": 0,
     "difficulty": 2,
     "hint": "There is no trick here, go over the years.",
     "explanation": "The answer is 2042,\nwhich 20 years from 2022 or 5 world cups",
-    "answers": [
-      { "answer": 2042 }
-    ]
+    "answers": [{ "answer": 2042 }]
   },
   {
     "id": 37,
@@ -497,7 +490,7 @@
     "title": "What is the missing number?",
     "image": 11,
     "difficulty": 3,
-    "hint": "Ignore the 3. What does 6 and 9 has in common?",
+    "hint": "What does 6 and 9 has in common?",
     "explanation": "the answer is 3.\nthe answer is how many circles the numbers have.\n in the number 871205 there are 3 circles\n",
     "answers": [
       { "answer": 3 },
@@ -557,7 +550,7 @@
   {
     "id": 41,
     "type": "Text",
-    "title": "What number between 1 and 100\nhas the most syllables when said outloud?",
+    "title": "What number between 1 and 100 has the most syllables when said outloud?",
     "image": 0,
     "difficulty": 3,
     "hint": "look at a smaller scope of numbers and try to find logic.",
@@ -576,9 +569,7 @@
     "difficulty": 3,
     "hint": "it's a well known expression",
     "explanation": "the answer is Deep in thought.\nThe word deep is in the word thought.",
-    "answers": [
-      { "answer": "Deep in thought" }
-    ]
+    "answers": [{ "answer": "Deep in thought" }]
   },
   {
     "id": 43,
@@ -588,22 +579,17 @@
     "difficulty": 3,
     "hint": "did you remove five letters?",
     "explanation": "the answer is shakira.\nremoving the letters 'f-i-v-e-l-e-t-t-e-r-s' will leave the word shakira.",
-    "answers": [
-      { "answer": "shakira" }
-    ]
+    "answers": [{ "answer": "shakira" }]
   },
   {
     "id": 44,
     "type": "Text",
-    "title": "what animal is half goat and one third cow?",
+    "title": "what animal is half goat\nand one third cow?",
     "image": 0,
     "difficulty": 1,
     "hint": "what is half of \"goat\"?",
     "explanation": "the answer is cat.\none third of cow is C.\none half of goat is AT\n C+AT=CAT",
-    "answers": [
-      { "answer": "cat" },
-      { "answer": "a cat" }
-    ]
+    "answers": [{ "answer": "cat" }, { "answer": "a cat" }]
   },
   {
     "id": 45,
@@ -671,10 +657,10 @@
   {
     "id": 48,
     "type": "Text",
-    "title": "which 2 letters are missing from this tounge twister?\n \"_H_ __LLS S_A _H_LL_ BY TH_ __A _HOR_\"",
+    "title": "which 2 letters are missing from this well known sentence?\n \"_H_ __LLS S_A _H_LL_ BY TH_ __A _HOR_\"",
     "image": 0,
     "difficulty": 3,
-    "hint": "one of the letters is e",
+    "hint": "This sentence is a famous tounge twister",
     "explanation": "the answer is s,e.\n SHE SELLS SEASHELLS BY THE SEASHORE",
     "answers": [
       { "answer": "s,e" },
@@ -835,9 +821,89 @@
     "hint": "you need to the add the letter to the beginning of the word",
     "explanation": "the answer is A.\n you will get the word area",
     "answers": [
-      { "answer": "a" }
+      { "answer": "a" },
+      { "answer": "the letter a" },
+      { "answer": "letter a" }
+    ]
+  },
+  {
+    "id": 56,
+    "type": "Text",
+    "title": "When the twelve months of the year are written out in alphabetical order, which month comes third?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "no trick here, look at how the months are spelled ",
+    "explanation": "the answer is december.\n the alphabetical order is:\nApril,August,December",
+    "answers": [{ "answer": "December" }]
+  },
+  {
+    "id": 57,
+    "type": "Text",
+    "title": "In a road with exactly 26 houses. if em lives at number 13 and Bea lives at number 2, logically what number of house does Elle live at?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "try connecting checking why Bea is liveing on the second house.",
+    "explanation": "the answer is 12.\n the 26 houses represent the 26 letters in the alphabet. bea=b is the second letter, Em=M is th 13th and Elle=L at 12",
+    "answers": [
+      { "answer": 12 },
+      { "answer": "tweleve" },
+      { "answer": "number 12" },
+      { "answer": "number twelve" }
+    ]
+  },
+  {
+    "id": 58,
+    "type": "Text",
+    "title": "What are the next two numbers\nin this sequence:\n201 720 182 019 202 020 212 0??",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "does numbers have something in common if you'll look at this in another way",
+    "explanation": "The answer is 22.\n remove the gaps and the numbers beacome years: 2017,2018,2019,2020,2021,2022",
+    "answers": [
+      { "answer": 22 },
+      { "answer": "2,2" },
+      { "answer": "two,two" },
+      { "answer": "two ,two" },
+      { "answer": "two, two" },
+      { "answer": "two , two" },
+      { "answer": "two&two" },
+      { "answer": "two &two" },
+      { "answer": "two& two" },
+      { "answer": "two & two" },
+      { "answer": "two two" },
+      { "answer": "two and two" },
+      { "answer": "twenty two" }
+    ]
+  },
+  {
+    "id": 59,
+    "type": "Text",
+    "title": "Using just two letters fill the blank, what is the hidden word?\n_ L _ _ V _ L _ _ _",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "the word is without something.",
+    "explanation": "the answer is Sleevles.\n the missing letters are S & E",
+    "answers": [
+      { "answer": "sleevelsess" },
+      { "answer": "the word sleevelsess" },
+      { "answer": "the word is sleevelsess" }
+    ]
+  },
+  {
+    "id": 60,
+    "type": "Text",
+    "title": "If all the numbers from 1to twenty are written out in words and put to numerical order and then orginised into alphabetical order, which is the only number that stays in the same position?",
+    "image": 0,
+    "difficulty": 3,
+    "hint": "write all the numbers one by one and you'll find it",
+    "explanation": "Tthe answer is 55.\nthe order will be:8,18,11,15,5,4,14,9,19,1,7,17,6,16,10,13,3,12,20,2",
+    "answers": [
+      { "answer": "five" },
+      { "answer": 5 },
+      { "answer": "number 5" },
+      { "answer": "the number 5" },
+      { "answer": "number five" },
+      { "answer": "the number five" }
     ]
   }
-
-
 ]

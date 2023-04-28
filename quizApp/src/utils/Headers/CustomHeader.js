@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   logo: {
-    marginTop: 13,
+    marginTop: 20,
     width: "100%",
     height: "100%",
   },

@@ -31,10 +31,11 @@ const globalStyles = StyleSheet.create({
   },
   riddleTitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: "500",
     marginBottom: 20,
     alignItems: "center",
     textAlign: "center",
+    width: 350,
   },
   riddleImage: {
     margin: 30,

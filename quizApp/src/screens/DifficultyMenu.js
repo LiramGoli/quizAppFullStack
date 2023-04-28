@@ -91,12 +91,12 @@ const DifficultyMenu = ({ navigation }) => {
         >
           <TouchableOpacity
             key="Medium"
-            style={[styles.button, counter < 3 && styles.disabledButton]}
+            style={[styles.button, counter < 15 && styles.disabledButton]}
             onPress={() => {
-              counter < 3 ? shake(animMedium) : pressHandler("Medium");
+              counter < 15 ? shake(animMedium) : pressHandler("Medium");
             }}
           >
-            {counter<3 &&<Text style={styles.buttonText}>{counter % 25}/15</Text>}
+            {counter<15 &&<Text style={styles.buttonText}>{counter % 25}/15</Text>}
             <Text style={styles.buttonText}>Medium</Text>
           </TouchableOpacity>
         </Animated.View>
@@ -106,9 +106,9 @@ const DifficultyMenu = ({ navigation }) => {
         >
           <TouchableOpacity
             key="Hard"
-            style={[styles.button, counter < 5 && styles.disabledButton]}
+            style={[styles.button, counter < 25 && styles.disabledButton]}
             onPress={() => {
-              counter < 5 ? shake(animHard) : pressHandler("Hard");
+              counter < 25 ? shake(animHard) : pressHandler("Hard");
             }}
           >
             {counter<5 &&<Text style={styles.buttonText}>{counter % 25}/25</Text>}
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 250,
+    marginTop: 300,
   },
   buttonText: {
     color: "#ffffff",

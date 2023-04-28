@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("express-async-errors");
+const serverless = require("serverless-http");
 const connectDB = require("./db/connect");
 const riddleRouter = require("./routes/collectRiddles");
 const express = require("express");
@@ -16,7 +17,9 @@ const port = process.env.PORT || 5000;
 
 const start = async () => {
   try {
-    await connectDB("mongodb+srv://liram:liram@cluster0.3eiygld.mongodb.net/?retryWrites=true&w=majority");
+    await connectDB(
+      "mongodb+srv://liram:liram@cluster0.3eiygld.mongodb.net/?retryWrites=true&w=majority"
+    );
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
@@ -25,3 +28,4 @@ const start = async () => {
   }
 };
 start();
+module.exports.handler = serverless(app);
