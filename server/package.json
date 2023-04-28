@@ -71,6 +71,7 @@
     "saslprep": "^1.0.3",
     "send": "^0.18.0",
     "serve-static": "^1.15.0",
+    "serverless-http": "^3.2.0",
     "setprototypeof": "^1.2.0",
     "side-channel": "^1.0.4",
     "sift": "^16.0.1",

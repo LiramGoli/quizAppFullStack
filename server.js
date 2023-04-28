@@ -11,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 //routes
+
 app.use("/api/v1/riddle-collect", riddleRouter);
 
 const port = process.env.PORT || 5000;
