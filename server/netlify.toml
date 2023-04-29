@@ -1,2 +1,3 @@
 [build]
-functions="routes"
+command = "npm start"
+functions = "functions"

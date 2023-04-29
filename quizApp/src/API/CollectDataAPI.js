@@ -1,5 +1,6 @@
 
-const Api_Uri = "http://192.168.1.194:5000/api/v1/riddle-collect";
+// const Api_Uri = "http://192.168.1.194:5000/riddle-collect";
+const Api_Uri = "https://braintease.netlify.app/.netlify/functions/server/riddlecollect";
 
 const getAllRiddles = () => {
   try {
