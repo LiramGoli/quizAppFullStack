@@ -54,8 +54,8 @@
     "image": 0,
     "difficulty": 1,
     "hint": "Try to think about what number can become even after removing one letter.",
-    "explanation": "The number 7. By removing the letter 'S' from the noumber seven we will get the word \"even\".",
-    "answers": [{ "answer": "seven" }, { "answer": 7 }]
+    "explanation": "The number 7. By removing the letter 'S' from the number seven we will get the word \"even\".",
+    "answers": [{ "answer": "seven" }, { "answer": 7 },{ "answer": "number seven" },{ "answer": "the number seven" },{ "answer": "number 7" },{ "answer": "the number 7" }]
   },
   {
     "id": 6,
@@ -65,7 +65,7 @@
     "difficulty": 1,
     "hint": "Think about something that can fill the room in a moment and can get to every corner.",
     "explanation": "Light, unlike anything else, does not take any space and can fill a room.",
-    "answers": [{ "answer": "light" }]
+    "answers": [{ "answer": "light" },{ "answer": "the light" }]
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
     "difficulty": 1,
     "hint": "What does Drying mean?",
     "explanation": "The answer is Towel.Towel gets wet when drying stuff.",
-    "answers": [{ "answer": "towel" }, { "answer": "paper towel" }]
+    "answers": [{ "answer": "towel" }, { "answer": "paper towel" }, { "answer": "a paper towel" }, { "answer": "a towel" }]
   },
   {
     "id": 11,
@@ -118,7 +118,7 @@
     "image": 0,
     "difficulty": 1,
     "hint": "Remember They are all in the same family.",
-    "explanation": "4. Since they are family, the three sisters have one broder which makes them 4 children. ",
+    "explanation": "4. Since they are family, the three sisters have one brother which makes them 4 children. ",
     "answers": [{ "answer": 4 }, { "answer": "four" }]
   },
   {

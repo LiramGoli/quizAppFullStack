@@ -10,7 +10,7 @@
         "resourceClass": "m-medium"
       }
     },
-    "BrainTease": {
+    "preview": {
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium"
