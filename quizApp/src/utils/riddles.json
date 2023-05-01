@@ -758,6 +758,7 @@
     "hint": "These letters were taken from not so far away....",
     "explanation": "the answer is t,q.every letter represent the first letter of every word in this sentence",
     "answers": [
+      { "answer": "tq" },
       { "answer": "t,q" },
       { "answer": "t ,q" },
       { "answer": "t, q" },
