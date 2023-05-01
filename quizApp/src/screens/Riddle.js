@@ -245,18 +245,28 @@ export default function Riddle({ navigation, route }) {
   };
 
   const nextQuestion = () => {
+    console.log(unsolvedRiddles);
     function findNextNumber(id) {
-      for (let i = 0; i <= unsolvedRiddles.length - 1; i++) {
-        if (unsolvedRiddles[i] === id) {
-          if (i === unsolvedRiddles.length - 1) return unsolvedRiddles[0];
-          else return unsolvedRiddles[i + 1];
+      if (unsolvedRiddles.includes(id)) {
+        for (let i = 0; i <= unsolvedRiddles.length - 1; i++) {
+          if (unsolvedRiddles[i] === id) {
+            if (i === unsolvedRiddles.length - 1) return unsolvedRiddles[0];
+            else return unsolvedRiddles[i + 1];
+          }
         }
+      } else {
+        if (unsolvedRiddles.length === 0 || unsolvedRiddles === null)
+          return null;
+        else return unsolvedRiddles[0];
       }
+
       return null; // givenNumber not found or is the last number in the list
     }
+
     const nextNumber = findNextNumber(riddle.id);
     const index = unsolvedRiddles.indexOf(riddle.id);
     if (index > -1) unsolvedRiddles.splice(index, 1);
+    console.log(riddle.id);
     if (nextNumber !== null) {
       //reset all the states
       setUserUsedHint(false);
@@ -361,8 +371,12 @@ export default function Riddle({ navigation, route }) {
           />
 
           <SubmitButton
-            onPressFunction={checkAnswer}
-            editable={editablebuttons}
+            onPressFunction={
+              unsolvedRiddles.length === 0 ? goToMenu:
+              editablebuttons === true ? checkAnswer : nextQuestion
+            }
+            // onPressFunction={checkAnswer}
+            editable={unsolvedRiddles.length === 0?2:editablebuttons}
           />
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>
