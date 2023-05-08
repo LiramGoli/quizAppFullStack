@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   View,
   Text,
@@ -10,6 +10,7 @@ import LottieView from "lottie-react-native";
 import ModalAnimationDict from "../ModalAnimationDict";
 import { Entypo } from "@expo/vector-icons";
 import PlaySound from "../PlaySound";
+import SettingsContext from "../../context/SettingsContext";
 
 export default function SuccessModal({
   visible,
@@ -18,6 +19,7 @@ export default function SuccessModal({
   setFinishedQuestion,
   riddleID,
 }) {
+  const { settings } = useContext(SettingsContext);
   const closeModal = () => {
     setFinishedQuestion(false);
   };
@@ -43,7 +45,8 @@ export default function SuccessModal({
               loop={false}
               style={{ width: 100, height: 100 }}
             />
-            <PlaySound audio={1}/>
+
+            {settings.sound && <PlaySound audio={1} />}
 
             <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
               <Text style={styles.closeButtonText}>X</Text>

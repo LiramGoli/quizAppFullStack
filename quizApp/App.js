@@ -7,21 +7,23 @@ import { retrieveData } from "./src/localStorage/localStorage";
 import { useEffect, useState } from "react";
 import UserContext from "./src/context/UserContext";
 import CounterContext from "./src/context/CounterContext";
+import SettingsContext from "./src/context/SettingsContext";
 import LottieView from "lottie-react-native";
 import globalStyles from "./src/utils/GlobalStyles";
 
 export default function App() {
   const [userData, setUserData] = useState();
   const [counter, setCounter] = useState();
+  const [settings, setSettings] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
-    getMyObject().then(({ data, numSolved }) => {
+    getMyObject().then(({ data, numSolved, settingsAsync }) => {
       if (isMounted) {
         setUserData(data);
         setCounter(numSolved);
-        // setLoading(false);
+        setSettings(settingsAsync);
         const timeout = setTimeout(() => {
           setLoading(false);
         }, 1500);
@@ -39,9 +41,11 @@ export default function App() {
     try {
       const jsonValue = await retrieveData("@riddleData");
       const solvedJson = await retrieveData("@NumSolved");
+      const settingsJson = await retrieveData("@Settings");
       const data = jsonValue != null ? JSON.parse(jsonValue) : null;
       const numSolved = solvedJson != null ? JSON.parse(solvedJson) : 0;
-      return { data, numSolved };
+      const settingsAsync = settingsJson != null ? JSON.parse(settingsJson) : { sound: true, vibration: true };
+      return { data, numSolved, settingsAsync};
     } catch (e) {
       console.log(e);
     }
@@ -71,12 +75,14 @@ export default function App() {
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
-      <CounterContext.Provider value={{ counter, setCounter }}>
-        <StatusBar translucent backgroundColor="transparent" style="" />
-        <NavigationContainer>
-          <RiddleStack />
-        </NavigationContainer>
-      </CounterContext.Provider>
+      <SettingsContext.Provider value={{ settings, setSettings }}>
+        <CounterContext.Provider value={{ counter, setCounter }}>
+          <StatusBar translucent backgroundColor="transparent" style="" />
+          <NavigationContainer>
+            <RiddleStack />
+          </NavigationContainer>
+        </CounterContext.Provider>
+      </SettingsContext.Provider>
     </UserContext.Provider>
   );
 }

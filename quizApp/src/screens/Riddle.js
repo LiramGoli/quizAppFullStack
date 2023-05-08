@@ -14,6 +14,7 @@ import {
 import riddles from "../utils/riddles.json";
 import UserContext from "../context/UserContext";
 import CounterContext from "../context/CounterContext";
+import SettingsContext from "../context/SettingsContext";
 import HintButton from "../utils/Buttons/HintButton";
 import AnswerButton from "../utils/Buttons/AnswerButton";
 import SubmitButton from "../utils/Buttons/SubmitButton";
@@ -47,6 +48,7 @@ export default function Riddle({ navigation, route }) {
   const { riddle, unsolvedRiddles } = route.params;
   const { userData, setUserData } = useContext(UserContext);
   const { counter, setCounter } = useContext(CounterContext);
+  const { settings } = useContext(SettingsContext);
   const [userUsedHint, setUserUsedHint] = useState(false);
   const [userUsedAnswer, setUserUsedAnswer] = useState(false);
   const [interstitialLoaded, setInterstitialLoaded] = useState(false);
@@ -203,7 +205,8 @@ export default function Riddle({ navigation, route }) {
     }
     setWrongCounter((wrongCounter + 1) % 3);
     Alert.alert("Wrong", "Try Again");
-    Vibration.vibrate();
+    
+    settings.vibration? Vibration.vibrate():null;
     if (!wrongCounter) {
       interstitial.show();
     }
@@ -372,11 +375,13 @@ export default function Riddle({ navigation, route }) {
 
           <SubmitButton
             onPressFunction={
-              unsolvedRiddles.length === 0 ? goToMenu:
-              editablebuttons === true ? checkAnswer : nextQuestion
+              unsolvedRiddles.length === 0
+                ? goToMenu
+                : editablebuttons === true
+                ? checkAnswer
+                : nextQuestion
             }
-            // onPressFunction={checkAnswer}
-            editable={unsolvedRiddles.length === 0?2:editablebuttons}
+            editable={unsolvedRiddles.length === 0 ? 2 : editablebuttons}
           />
         </KeyboardAvoidingView>
       </TouchableWithoutFeedback>

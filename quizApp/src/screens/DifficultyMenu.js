@@ -11,15 +11,20 @@ import LottieView from "lottie-react-native";
 import globalStyles from "../utils/GlobalStyles";
 import CustomHeaderFront from "../utils/Headers/CustomHeaderFront";
 import CounterContext from "../context/CounterContext";
-import { useContext, useRef, useCallback } from "react";
+import { useContext, useRef, useCallback, useState } from "react";
+import SettingsButton from "../utils/Buttons/SettingsButton";
+import SettingsModal from "../utils/Modals/SettingsModal";
+import SettingsContext from "../context/SettingsContext";
 
 const DifficultyMenu = ({ navigation }) => {
+  const [openSettingsModal, setOpenSettingsModal] = useState(false);
+  const { settings, setSettings } = useContext(SettingsContext);
   const { counter } = useContext(CounterContext);
   const animHard = useRef(new Animated.Value(0));
   const animMedium = useRef(new Animated.Value(0));
 
   const shake = useCallback((anim) => {
-    Vibration.vibrate();
+    settings.vibration ? Vibration.vibrate() : null;
     // makes the sequence loop
     Animated.loop(
       // runs the animation array in sequence
@@ -46,7 +51,11 @@ const DifficultyMenu = ({ navigation }) => {
       // loops the above animation config 2 times
       { iterations: 2 }
     ).start();
-  }, []);
+  }, [settings]);
+
+  const onPressSettings = () => {
+    setOpenSettingsModal(!openSettingsModal);
+  };
 
   const Difficulty = {
     Easy: 1,
@@ -73,21 +82,28 @@ const DifficultyMenu = ({ navigation }) => {
         <CustomHeaderFront />
       </View>
 
-      <View style={{...styles.content,flex:1}}>
-        <View >
-        <TouchableOpacity
-          key="Easy"
-          hitSlop={10}
-          style={{...styles.button}}
-          onPress={() => {
-            pressHandler("Easy");
-          }}
-        >
-          <Text style={styles.buttonText}>Easy</Text>
-        </TouchableOpacity>
+      <SettingsModal
+        visible={openSettingsModal}
+        onClose={onPressSettings}
+        settings={settings}
+        setSettings={setSettings}
+      />
+
+      <View style={{ ...styles.content, flex: 1 }}>
+        <View>
+          <TouchableOpacity
+            key="Easy"
+            hitSlop={10}
+            style={{ ...styles.button }}
+            onPress={() => {
+              pressHandler("Easy");
+            }}
+          >
+            <Text style={styles.buttonText}>Easy</Text>
+          </TouchableOpacity>
         </View>
         <Animated.View
-          style={{ transform: [{ translateX: animMedium.current }]}}
+          style={{ transform: [{ translateX: animMedium.current }] }}
         >
           <TouchableOpacity
             key="Medium"
@@ -96,7 +112,9 @@ const DifficultyMenu = ({ navigation }) => {
               counter < 15 ? shake(animMedium) : pressHandler("Medium");
             }}
           >
-            {counter<15 &&<Text style={styles.buttonText}>{counter % 25}/15</Text>}
+            {counter < 15 && (
+              <Text style={styles.buttonText}>{counter % 25}/15</Text>
+            )}
             <Text style={styles.buttonText}>Medium</Text>
           </TouchableOpacity>
         </Animated.View>
@@ -111,10 +129,13 @@ const DifficultyMenu = ({ navigation }) => {
               counter < 25 ? shake(animHard) : pressHandler("Hard");
             }}
           >
-            {counter<25 &&<Text style={styles.buttonText}>{counter % 25}/25</Text>}
+            {counter < 25 && (
+              <Text style={styles.buttonText}>{counter % 25}/25</Text>
+            )}
             <Text style={styles.buttonText}>Hard</Text>
           </TouchableOpacity>
         </Animated.View>
+        <SettingsButton onPressSettings={onPressSettings} />
       </View>
       <BottomBanner />
     </View>
@@ -125,7 +146,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: "relative",
-    backgroundColor:'white'
+    backgroundColor: "white",
   },
   header: {
     position: "absolute",
@@ -147,7 +168,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    backgroundColor: 'rgba(15, 50, 100, 0.7)',
+    backgroundColor: "rgba(15, 50, 100, 0.7)",
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 12,
