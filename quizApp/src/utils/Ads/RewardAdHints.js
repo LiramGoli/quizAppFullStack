@@ -3,6 +3,7 @@ import {
   TestIds,
   RewardedAdEventType,
   AdEventType,
+  MaxAdContentRating,
 } from "react-native-google-mobile-ads";
 import { Alert } from "react-native";
 
@@ -15,8 +16,12 @@ export const hintRewardedInterstitial =
     requestNonPersonalizedAdsOnly: true,
   });
 
-export const loadRewardHintAd = (hint, setHintRewardInterstitialLoaded,setHintAlertUsed) => {
-  hintRewardedInterstitial.removeAllListeners()
+export const loadRewardHintAd = (
+  hint,
+  setHintRewardInterstitialLoaded,
+  setHintAlertUsed
+) => {
+  hintRewardedInterstitial.removeAllListeners();
   const hintRewardUnsubscribeLoaded =
     hintRewardedInterstitial.addAdEventListener(
       RewardedAdEventType.LOADED,
@@ -29,7 +34,7 @@ export const loadRewardHintAd = (hint, setHintRewardInterstitialLoaded,setHintAl
     hintRewardedInterstitial.addAdEventListener(
       RewardedAdEventType.EARNED_REWARD,
       (reward) => {
-        setHintAlertUsed(true)
+        setHintAlertUsed(true);
       }
     );
 
@@ -39,9 +44,8 @@ export const loadRewardHintAd = (hint, setHintRewardInterstitialLoaded,setHintAl
     });
 
   hintRewardedInterstitial.load();
-  
+
   return () => {
-    
     hintRewardUnsubscribeLoaded();
     hintRewardUnsubscribeEarned();
     hintRewardUnsubscribeClosed();

@@ -205,8 +205,8 @@ export default function Riddle({ navigation, route }) {
     }
     setWrongCounter((wrongCounter + 1) % 3);
     Alert.alert("Wrong", "Try Again");
-    
-    settings.vibration? Vibration.vibrate():null;
+
+    settings.vibration ? Vibration.vibrate() : null;
     if (!wrongCounter) {
       interstitial.show();
     }
@@ -214,12 +214,28 @@ export default function Riddle({ navigation, route }) {
 
   const onPressHint = () => {
     if (!hintAlertUsed) {
-      loadRewardHintAd(
-        riddle.hint,
-        setHintRewardInterstitialLoaded,
-        setHintAlertUsed
+      Alert.alert(
+        "Watch Hint",
+        "You are about to watch an ad. Do you agree?",
+        [
+          {
+            text: "No",
+            style: "cancel",
+          },
+          {
+            text: "Yes",
+            onPress: () => {
+              loadRewardHintAd(
+                riddle.hint,
+                setHintRewardInterstitialLoaded,
+                setHintAlertUsed
+              );
+              setLoadingModal(true);
+
+            },
+          },
+        ]
       );
-      setLoadingModal(true);
       return true;
     } else {
       Alert.alert("Hint", riddle.hint);
@@ -229,18 +245,32 @@ export default function Riddle({ navigation, route }) {
 
   const onPressAnswer = () => {
     if (!answerAlertUsed) {
-      loadRewardAnsAd(
-        riddle.explanation,
-        setAnsRewardInterstitialLoaded,
-        setAnswerAlertUsed
+      Alert.alert(
+        "Watch Answer",
+        "You are about to watch an ad. Do you agree?",
+        [
+          {
+            text: "No",
+            style: "cancel",
+          },
+          {
+            text: "Yes",
+            onPress: () => {
+              loadRewardAnsAd(
+                riddle.explanation,
+                setAnsRewardInterstitialLoaded,
+                setAnswerAlertUsed
+              );
+              setLoadingModal(true);
+            },
+          },
+        ]
       );
-      setLoadingModal(true);
-      return true;
     } else {
       Alert.alert("Answer", riddle.explanation);
-      return false;
     }
   };
+  
 
   const goToMenu = () => {
     setFinishedQuestion(false);
@@ -368,7 +398,7 @@ export default function Riddle({ navigation, route }) {
             hintAlertUsed={hintAlertUsed}
             updateDBFunction={updateRiddle}
             riddleID={riddle.id}
-            showRewardAd={onPressAnswer}
+            showRewardAd={()=>onPressAnswer()}
             styles={{ left: 90 }}
             userUsedAnswer={userUsedAnswer}
           />

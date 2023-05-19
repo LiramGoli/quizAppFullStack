@@ -1,0 +1,8 @@
+google play store build:
+eas build
+
+apk internal build:
+eas build -p android --profile preview
+
+in app development build:
+eas build --profile development --platform android

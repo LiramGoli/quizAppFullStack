@@ -19,7 +19,7 @@ export default function HintButton({
           // show ads
           Alert.alert(
             "Warning",
-            "You have to use the hint first..\natleast give it a shot"
+            "Before diving straight into the answer, take a peek at the helpful hint provided."
           );
         } else {
           const watched = showRewardAd();
@@ -35,7 +35,6 @@ export default function HintButton({
         }
       }}
     >
-      {/* <MaterialIcons name="support" size={40} color="#ffffff" /> */}
       <Entypo name="lifebuoy" size={40} color='rgba(15, 50, 100, 0.9)'/>
       <Text>Answer</Text>
     </TouchableOpacity>

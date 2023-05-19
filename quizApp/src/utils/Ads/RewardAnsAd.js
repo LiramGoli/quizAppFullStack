@@ -3,6 +3,7 @@ import {
   TestIds,
   RewardedAdEventType,
   AdEventType,
+  MaxAdContentRating,
 } from "react-native-google-mobile-ads";
 import { Alert } from "react-native";
 

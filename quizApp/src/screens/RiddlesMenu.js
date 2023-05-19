@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
     alignContent: "flex-start",
     justifyContent: "center",
     paddingTop: 10,
-    // backgroundColor:'white'
   },
   button: {
     width: 70,

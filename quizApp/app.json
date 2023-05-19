@@ -23,9 +23,10 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.liram.quizApp",
-      "premissions":[
+      "premissions": [
         "VIBRATE"
-      ]
+      ],
+      "versionCode": 10
     },
     "web": {
       "favicon": "./assets/icon.png"

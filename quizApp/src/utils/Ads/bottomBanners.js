@@ -3,6 +3,7 @@ import {
   BannerAd,
   BannerAdSize,
   TestIds,
+  MaxAdContentRating,
 } from "react-native-google-mobile-ads";
 
 const adUnitId = __DEV__
