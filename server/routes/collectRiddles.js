@@ -8,4 +8,3 @@ router.route("/:id/:difficulty").get(RiddleController.createRiddle);
 router.route("/:id").patch(RiddleController.updateRiddle);
 
 module.exports = router;
-// app.use("/api/v1/riddle-collect", riddleRouter);

@@ -213,62 +213,63 @@ export default function Riddle({ navigation, route }) {
   };
 
   const onPressHint = () => {
-    if (!hintAlertUsed) {
-      Alert.alert(
-        "Watch Hint",
-        "You are about to watch an ad. Do you agree?",
-        [
-          {
-            text: "No",
-            style: "cancel",
-          },
-          {
-            text: "Yes",
-            onPress: () => {
-              loadRewardHintAd(
-                riddle.hint,
-                setHintRewardInterstitialLoaded,
-                setHintAlertUsed
-              );
-              setLoadingModal(true);
+    // if (!hintAlertUsed) {
+    //   Alert.alert(
+    //     "Watch Hint",
+    //     "You are about to watch an ad. Do you agree?",
+    //     [
+    //       {
+    //         text: "No",
+    //         style: "cancel",
+    //       },
+    //       {
+    //         text: "Yes",
+    //         onPress: () => {
+    //           loadRewardHintAd(
+    //             riddle.hint,
+    //             setHintRewardInterstitialLoaded,
+    //             setHintAlertUsed
+    //           );
+    //           setLoadingModal(true);
 
-            },
-          },
-        ]
-      );
-      return true;
-    } else {
+    //         },
+    //       },
+    //     ]
+    //   );
+    //   return true;
+    // } else {
       Alert.alert("Hint", riddle.hint);
+      setHintAlertUsed(true)//for month only
       return false;
-    }
+    // }
   };
 
   const onPressAnswer = () => {
-    if (!answerAlertUsed) {
-      Alert.alert(
-        "Watch Answer",
-        "You are about to watch an ad. Do you agree?",
-        [
-          {
-            text: "No",
-            style: "cancel",
-          },
-          {
-            text: "Yes",
-            onPress: () => {
-              loadRewardAnsAd(
-                riddle.explanation,
-                setAnsRewardInterstitialLoaded,
-                setAnswerAlertUsed
-              );
-              setLoadingModal(true);
-            },
-          },
-        ]
-      );
-    } else {
+    // if (!answerAlertUsed) {
+    //   Alert.alert(
+    //     "Watch Answer",
+    //     "You are about to watch an ad. Do you agree?",
+    //     [
+    //       {
+    //         text: "No",
+    //         style: "cancel",
+    //       },
+    //       {
+    //         text: "Yes",
+    //         onPress: () => {
+    //           loadRewardAnsAd(
+    //             riddle.explanation,
+    //             setAnsRewardInterstitialLoaded,
+    //             setAnswerAlertUsed
+    //           );
+    //           setLoadingModal(true);
+    //         },
+    //       },
+    //     ]
+    //   );
+    // } else {
       Alert.alert("Answer", riddle.explanation);
-    }
+    // }
   };
   
 

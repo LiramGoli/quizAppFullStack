@@ -64,7 +64,7 @@
     "image": 0,
     "difficulty": 1,
     "hint": "Think about something that can fill the room in a moment and can get to every corner.",
-    "explanation": "The answee is light, unlike anything else, does not take any space and can fill a room.",
+    "explanation": "The answer is light, unlike anything else, does not take any space and can fill a room.",
     "answers": [{ "answer": "light" },{ "answer": "the light" }]
   },
   {
@@ -259,6 +259,7 @@
     "explanation": "The answer is dictionary. The letter 'f' comes before the letter 't' so friday will come before thursday. ",
     "answers": [
       { "answer": "in a dictionary" },
+      { "answer": "in the dictionary" },
       { "answer": "a dictionary" },
       { "answer": "dictionary" }
     ]
@@ -897,7 +898,7 @@
     "image": 0,
     "difficulty": 3,
     "hint": "write all the numbers one by one and you'll find it",
-    "explanation": "Tthe answer is 55.\nthe order will be:8,18,11,15,5,4,14,9,19,1,7,17,6,16,10,13,3,12,20,2",
+    "explanation": "The answer is 55.\nthe order will be:8,18,11,15,5,4,14,9,19,1,7,17,6,16,10,13,3,12,20,2",
     "answers": [
       { "answer": "five" },
       { "answer": 5 },
@@ -905,6 +906,71 @@
       { "answer": "the number 5" },
       { "answer": "number five" },
       { "answer": "the number five" }
+    ]
+  },
+  {
+    "id": 61,
+    "type": "Text",
+    "title": "sdrawkcab og ot esu rac a seod raeg tahw",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "try looking at this from a different prespective",
+    "explanation": "The answer is reverse.\nthe question is written backwards and reads: what gear does a car use to go backwards?",
+    "answers": [
+      { "answer": "reverse" },
+      { "answer": "r" }
+    ]
+  },
+  {
+    "id": 62,
+    "type": "Text",
+    "title": "the next sentence is a code for an animal what is the animal:\nSEE OH DOUBLE U",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "try coinverting to letters",
+    "explanation": "The answer is cow.\nsee=c oh=o double u=w. which spelles cow",
+    "answers": [
+      { "answer": "cow" }
+
+    ]
+  },
+  {
+    "id": 63,
+    "type": "Text",
+    "title": "what number would you get if you multiply all the numbers on a phone's keypad?",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "no trick here, get a calculator",
+    "explanation": "The answer is 0.\nthe digit 0 is on the keypad and that's enough to make everything you'll multiply with 0 will be 0",
+    "answers": [
+      { "answer": 0 }
+
+    ]
+  },
+  {
+    "id": 64,
+    "type": "Text",
+    "title": "what vegetable can you insert here to create a fruit? \n_ _ _CH",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "it's a really small vegetable",
+    "explanation": "The answer is pea.\nthe word pea will create peach.",
+    "answers": [
+      { "answer": "pea" }
+
+    ]
+  },
+  {
+    "id": 65,
+    "type": "Text",
+    "title": "Bob's your uncle.Dylan's your son. Tom's Bob's brother. Sam's Bob's father. who's your daddy?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "follow the family tree and eliminate possibilties.",
+    "explanation": "The answer is tom.\nbob is your uncle, dylan is your son, and sam is your uncle's father. leaves us with tom.",
+    "answers": [
+      { "answer": "tom" }
+
     ]
   }
 ]
