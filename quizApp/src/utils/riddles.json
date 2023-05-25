@@ -563,12 +563,16 @@
   {
     "id": 41,
     "type": "Text",
-    "title": "answer the question in the image.",
-    "image": 23,
+    "title": "What number between 1 and 100 has the most syllables when said outloud?",
+    "image": 0,
     "difficulty": 3,
-    "hint": "there is a mathematical logic to this.",
-    "explanation": "the answer is 1.\nMultiply both the numbers and the equal their units digit.7*3=21",
-    "answers": [{ "answer": 1 }]
+    "hint": "look at a smaller scope of numbers and try to find logic.",
+    "explanation": "the answer is 77.\n7 is the only number between 1 and 10 that has 2 syllables-the rest has 1.So, it has to be 77.",
+    "answers": [
+      { "answer": 77 },
+      { "answer": "seventy seven" },
+      { "answer": "seventy-seven" }
+    ]
   },
   {
     "id": 42,
@@ -902,12 +906,19 @@
   {
     "id": 60,
     "type": "Text",
-    "title": "How Many Squares Are In This Picture?",
-    "image": 22,
+    "title": "If all the numbers from 1 to 20 are written out in words and put to numerical order and then orginised into alphabetical order, which is the only number that stays in the same position?",
+    "image": 0,
     "difficulty": 3,
-    "hint": "no trick here. try counting carefully",
-    "explanation": "The answer is 40.\n1 4X4 squre, 4 3X3 squares, 9 2X2 squares, 16 1X1 squres, 2 big middle squares, 8 small middle squares",
-    "answers": [{ "answer": 40 }]
+    "hint": "write all the numbers one by one and you'll find it",
+    "explanation": "The answer is 55.\nthe order will be:8,18,11,15,5,4,14,9,19,1,7,17,6,16,10,13,3,12,20,2",
+    "answers": [
+      { "answer": "five" },
+      { "answer": 5 },
+      { "answer": "number 5" },
+      { "answer": "the number 5" },
+      { "answer": "number five" },
+      { "answer": "the number five" }
+    ]
   },
   {
     "id": 61,
@@ -1033,32 +1044,23 @@
   {
     "id": 71,
     "type": "Text",
-    "title": "If all the numbers from 1 to 20 are written out in words and put to numerical order and then orginised into alphabetical order, which is the only number that stays in the same position?",
-    "image": 0,
+    "title": "How Many Squares Are In This Picture?",
+    "image": 22,
     "difficulty": 3,
-    "hint": "write all the numbers one by one and you'll find it",
-    "explanation": "The answer is 55.\nthe order will be:8,18,11,15,5,4,14,9,19,1,7,17,6,16,10,13,3,12,20,2",
-    "answers": [
-      { "answer": "five" },
-      { "answer": 5 },
-      { "answer": "number 5" },
-      { "answer": "the number 5" },
-      { "answer": "number five" },
-      { "answer": "the number five" }
-    ]
+    "hint": "no trick here. try counting carefully",
+    "explanation": "The answer is 40.\n1 4X4 squre, 4 3X3 squares, 9 2X2 squares, 16 1X1 squres, 2 big middle squares, 8 small middle squares",
+    "answers": [{ "answer": 40 }]
   },
   {
     "id": 72,
     "type": "Text",
-    "title": "What number between 1 and 100 has the most syllables when said outloud?",
-    "image": 0,
+    "title": "answer the question in the image.",
+    "image": 23,
     "difficulty": 3,
-    "hint": "look at a smaller scope of numbers and try to find logic.",
-    "explanation": "the answer is 77.\n7 is the only number between 1 and 10 that has 2 syllables-the rest has 1.So, it has to be 77.",
-    "answers": [
-      { "answer": 77 },
-      { "answer": "seventy seven" },
-      { "answer": "seventy-seven" }
-    ]
+    "hint": "there is a mathematical logic to this.",
+    "explanation": "the answer is 1.\nMultiply both the numbers and the equal their units digit.7*3=21",
+    "answers": [{ "answer": 1 }]
   }
+
+  
 ]
