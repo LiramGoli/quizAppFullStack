@@ -2,7 +2,7 @@ import React from "react";
 import { Text, TouchableHighlight, StyleSheet } from "react-native";
 const CustomButton = (props) => {
 
-  let buttonText = "next question";
+  let buttonText = "Next Question";
   if (props.editable == 1) {
     buttonText = "Submit Answer";
   } else if (props.editable === 2) {

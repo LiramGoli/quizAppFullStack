@@ -55,7 +55,14 @@
     "difficulty": 1,
     "hint": "Try to think about what number can become even after removing one letter.",
     "explanation": "The number 7. By removing the letter 'S' from the number seven we will get the word \"even\".",
-    "answers": [{ "answer": "seven" }, { "answer": 7 },{ "answer": "number seven" },{ "answer": "the number seven" },{ "answer": "number 7" },{ "answer": "the number 7" }]
+    "answers": [
+      { "answer": "seven" },
+      { "answer": 7 },
+      { "answer": "number seven" },
+      { "answer": "the number seven" },
+      { "answer": "number 7" },
+      { "answer": "the number 7" }
+    ]
   },
   {
     "id": 6,
@@ -65,7 +72,7 @@
     "difficulty": 1,
     "hint": "Think about something that can fill the room in a moment and can get to every corner.",
     "explanation": "The answer is light, unlike anything else, does not take any space and can fill a room.",
-    "answers": [{ "answer": "light" },{ "answer": "the light" }]
+    "answers": [{ "answer": "light" }, { "answer": "the light" }]
   },
   {
     "id": 7,
@@ -109,7 +116,12 @@
     "difficulty": 1,
     "hint": "What does Drying mean?",
     "explanation": "The answer is Towel.Towel gets wet when drying stuff.",
-    "answers": [{ "answer": "towel" }, { "answer": "paper towel" }, { "answer": "a paper towel" }, { "answer": "a towel" }]
+    "answers": [
+      { "answer": "towel" },
+      { "answer": "paper towel" },
+      { "answer": "a paper towel" },
+      { "answer": "a towel" }
+    ]
   },
   {
     "id": 11,
@@ -551,16 +563,12 @@
   {
     "id": 41,
     "type": "Text",
-    "title": "What number between 1 and 100 has the most syllables when said outloud?",
-    "image": 0,
+    "title": "answer the question in the image.",
+    "image": 23,
     "difficulty": 3,
-    "hint": "look at a smaller scope of numbers and try to find logic.",
-    "explanation": "the answer is 77.\n7 is the only number between 1 and 10 that has 2 syllables-the rest has 1.So, it has to be 77.",
-    "answers": [
-      { "answer": 77 },
-      { "answer": "seventy seven" },
-      { "answer": "seventy-seven" }
-    ]
+    "hint": "there is a mathematical logic to this.",
+    "explanation": "the answer is 1.\nMultiply both the numbers and the equal their units digit.7*3=21",
+    "answers": [{ "answer": 1 }]
   },
   {
     "id": 42,
@@ -894,6 +902,137 @@
   {
     "id": 60,
     "type": "Text",
+    "title": "How Many Squares Are In This Picture?",
+    "image": 22,
+    "difficulty": 3,
+    "hint": "no trick here. try counting carefully",
+    "explanation": "The answer is 40.\n1 4X4 squre, 4 3X3 squares, 9 2X2 squares, 16 1X1 squres, 2 big middle squares, 8 small middle squares",
+    "answers": [{ "answer": 40 }]
+  },
+  {
+    "id": 61,
+    "type": "Text",
+    "title": "sdrawkcab og ot esu rac a seod raeg tahw",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "try looking at this from a different prespective",
+    "explanation": "The answer is reverse.\nthe question is written backwards and reads: what gear does a car use to go backwards?",
+    "answers": [{ "answer": "reverse" }, { "answer": "r" }]
+  },
+  {
+    "id": 62,
+    "type": "Text",
+    "title": "the next sentence is a code for an animal what is the animal:\nSEE OH DOUBLE U",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "try coinverting to letters",
+    "explanation": "The answer is cow.\nsee=c oh=o double u=w. which spelles cow",
+    "answers": [{ "answer": "cow" }]
+  },
+  {
+    "id": 63,
+    "type": "Text",
+    "title": "what number would you get if you multiply all the numbers on a phone's keypad?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "no trick here, get a calculator",
+    "explanation": "The answer is 0.\nthe digit 0 is on the keypad and that's enough to make everything you'll multiply with 0 will be 0",
+    "answers": [{ "answer": 0 }]
+  },
+  {
+    "id": 64,
+    "type": "Text",
+    "title": "what vegetable can you insert here to create a fruit? \n_ _ _CH",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "it's a really small vegetable",
+    "explanation": "The answer is pea.\nthe word pea will create peach.",
+    "answers": [{ "answer": "pea" }]
+  },
+  {
+    "id": 65,
+    "type": "Text",
+    "title": "Bob's your uncle.Dylan's your son. Tom's Bob's brother. Sam's Bob's father. who's your daddy?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "follow the family tree and eliminate possibilties.",
+    "explanation": "The answer is tom.\nbob is your uncle, dylan is your son, and sam is your uncle's father. leaves us with tom.",
+    "answers": [{ "answer": "tom" }]
+  },
+  {
+    "id": 66,
+    "type": "Text",
+    "title": "What is the next digit?",
+    "image": 19,
+    "difficulty": 3,
+    "hint": "it's not about the numbers",
+    "explanation": "The answer is 1.\nEach digit uses one line fewer. the first has 7 lines,than6,5,4,3.the only number that can be made with 2 lines is 1",
+    "answers": [{ "answer": 1 }]
+  },
+  {
+    "id": 67,
+    "type": "Text",
+    "title": "What are the two missing letters from all of the following?\n _ _NADA\n_ _MEROON\nAMERI_ _",
+    "image": 0,
+    "difficulty": 1,
+    "hint": "two of these words are bordered together.",
+    "explanation": "The answer is c&a.\nCAnada, CAmeroon, ameriCA",
+    "answers": [
+      { "answer": "ca" },
+      { "answer": "c,a" },
+      { "answer": "c, a" },
+      { "answer": "c ,a" },
+      { "answer": "c and a" },
+      { "answer": "c&a" },
+      { "answer": "c& a" },
+      { "answer": "c &a" }
+    ]
+  },
+  {
+    "id": 68,
+    "type": "Text",
+    "title": "Answer the question below:",
+    "image": 20,
+    "difficulty": 2,
+    "hint": "the answer is infront of you",
+    "explanation": "The answer is 1.\nif 1 = 5 then 5 must equal 1",
+    "answers": [{ "answer": 1 }]
+  },
+  {
+    "id": 69,
+    "type": "Text",
+    "title": "A bat and a ball cost together 1.1$ in total, the bat costs 1$ more than the ball. how much does the ball costs?",
+    "image": 0,
+    "difficulty": 2,
+    "hint": "the bat costs exactly 1$ more",
+    "explanation": "The answer is 5 cents.\nBat=1.5$ ball= 5 cents",
+    "answers": [
+      { "answer": "5c" },
+      { "answer": "5 c" },
+      { "answer": "5 cent" },
+      { "answer": "5 cents" },
+      { "answer": "five c" },
+      { "answer": "five cent" },
+      { "answer": "five cents" },
+      { "answer": "nickel" },
+      { "answer": "1 nickel " },
+      { "answer": "a nickel" },
+      { "answer": "one nickel " }
+    ]
+  },
+  {
+    "id": 70,
+    "type": "Text",
+    "title": "What Legendery figure is written in code below?",
+    "image": 21,
+    "difficulty": 3,
+    "hint": "the word in red is in something",
+    "explanation": "The answer is robin hood.\nthe word rob is in the word hood",
+    "answers": [{ "answer": "robin hood" }]
+  },
+  {
+    "id": 71,
+    "type": "Text",
     "title": "If all the numbers from 1 to 20 are written out in words and put to numerical order and then orginised into alphabetical order, which is the only number that stays in the same position?",
     "image": 0,
     "difficulty": 3,
@@ -909,68 +1048,17 @@
     ]
   },
   {
-    "id": 61,
+    "id": 72,
     "type": "Text",
-    "title": "sdrawkcab og ot esu rac a seod raeg tahw",
+    "title": "What number between 1 and 100 has the most syllables when said outloud?",
     "image": 0,
-    "difficulty": 1,
-    "hint": "try looking at this from a different prespective",
-    "explanation": "The answer is reverse.\nthe question is written backwards and reads: what gear does a car use to go backwards?",
+    "difficulty": 3,
+    "hint": "look at a smaller scope of numbers and try to find logic.",
+    "explanation": "the answer is 77.\n7 is the only number between 1 and 10 that has 2 syllables-the rest has 1.So, it has to be 77.",
     "answers": [
-      { "answer": "reverse" },
-      { "answer": "r" }
-    ]
-  },
-  {
-    "id": 62,
-    "type": "Text",
-    "title": "the next sentence is a code for an animal what is the animal:\nSEE OH DOUBLE U",
-    "image": 0,
-    "difficulty": 1,
-    "hint": "try coinverting to letters",
-    "explanation": "The answer is cow.\nsee=c oh=o double u=w. which spelles cow",
-    "answers": [
-      { "answer": "cow" }
-
-    ]
-  },
-  {
-    "id": 63,
-    "type": "Text",
-    "title": "what number would you get if you multiply all the numbers on a phone's keypad?",
-    "image": 0,
-    "difficulty": 1,
-    "hint": "no trick here, get a calculator",
-    "explanation": "The answer is 0.\nthe digit 0 is on the keypad and that's enough to make everything you'll multiply with 0 will be 0",
-    "answers": [
-      { "answer": 0 }
-
-    ]
-  },
-  {
-    "id": 64,
-    "type": "Text",
-    "title": "what vegetable can you insert here to create a fruit? \n_ _ _CH",
-    "image": 0,
-    "difficulty": 1,
-    "hint": "it's a really small vegetable",
-    "explanation": "The answer is pea.\nthe word pea will create peach.",
-    "answers": [
-      { "answer": "pea" }
-
-    ]
-  },
-  {
-    "id": 65,
-    "type": "Text",
-    "title": "Bob's your uncle.Dylan's your son. Tom's Bob's brother. Sam's Bob's father. who's your daddy?",
-    "image": 0,
-    "difficulty": 2,
-    "hint": "follow the family tree and eliminate possibilties.",
-    "explanation": "The answer is tom.\nbob is your uncle, dylan is your son, and sam is your uncle's father. leaves us with tom.",
-    "answers": [
-      { "answer": "tom" }
-
+      { "answer": 77 },
+      { "answer": "seventy seven" },
+      { "answer": "seventy-seven" }
     ]
   }
 ]
